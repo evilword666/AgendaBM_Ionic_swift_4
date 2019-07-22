@@ -5,20 +5,20 @@
 :root {
 
   /** primary **/
-  --ion-color-primary: #0089AB;
-  --ion-color-primary-rgb: 56,128,255;
+  --ion-color-primary: #096A9C;
+  --ion-color-primary-rgb: 9,106,56;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255,255,255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary-shade: rgb(6, 72, 105);
+  --ion-color-primary-tint: rgb(13, 144, 209);
 
   /** secondary **/
-  --ion-color-secondary: #0cd1e8;
-  --ion-color-secondary-rgb: 12,209,232;
+  --ion-color-secondary: #A81A47;
+  --ion-color-secondary-rgb: 168,26,71;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255,255,255;
-  --ion-color-secondary-shade: #0bb8cc;
-  --ion-color-secondary-tint: #24d6ea;
+  --ion-color-secondary-shade: rgb(110, 17, 46);
+  --ion-color-secondary-tint: rgb(226, 37, 97);
 
   /** tertiary **/
   --ion-color-tertiary: #7044ff;
@@ -45,7 +45,7 @@
   --ion-color-warning-tint: #ffd31a;
 
   /** danger **/
-  --ion-color-danger: #f04141;
+  --ion-color-danger: #9c9c9c;
   --ion-color-danger-rgb: 245,61,61;
   --ion-color-danger-contrast: #ffffff;
   --ion-color-danger-contrast-rgb: 255,255,255;
@@ -69,11 +69,33 @@
   --ion-color-medium-tint: #a2a4ab;
 
   /** light **/
-  --ion-color-light: #f4f5f8;
+  --ion-color-light: #ffffff;
   --ion-color-light-rgb: 244,244,244;
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0,0,0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 
+  /**/
+  .monthview-container{height:auto!important}
+  .monthview-current, .monthview-selected, .monthview-primary-with-event{background-color: rgba(255,255,255,0)!important; position:relative}
+  .monthview-current:before{content:""; width:36px; height:36px; border-radius:50%; position: absolute; top:0px; left:50%; margin-left: -18px; background: rgb(185, 185, 185); display:block; z-index: -1;}
+  .monthview-selected:before{content:""; width:36px; height:36px; border-radius:50%; position: absolute; top:0px; left:50%; margin-left: -18px; background: #A81A47; display:block; z-index: -1;}
+  .monthview-primary-with-event:before{content:""; width:36px; height:36px; border-radius:50%; position: absolute; top:0px; left:50%; margin-left: -18px; background: #096A9C; display:block; z-index: -1;}
+
+  .ml10{position:absolute; right:10px;}
+  ion-header ion-title{display:inline-block; vertical-align: text-top; }
+  .monthview-selected, .monthview-primary-with-event{background: none!important; position: relative;}
+  .monthview-primary-with-event:before{content:"";background:#096A9C; width:36px; height:36px; border-radius:50%; display: block; position: absolute; top: 0; left: 0; z-index: -1; left:50%; margin-left: -18px}
+  .monthview-selected:before, .monthview-primary-with-event.monthview-selected:before{content:"";background:#A81A47; width:36px; height:36px; border-radius:50%; display: block; position: absolute; top: 0; left: 0; z-index: -1; left:50%; margin-left: -18px}
+  .monthview-primary-with-event, .weekview-with-event, .dayview-allday-label{background:#BFD9D5}    
+  .monthview-eventdetail-timecolumn{font-weight: 600; font-size:.95em; text-align: center; background:#096A9C!important; color: #fff!important; padding: 5px; vertical-align: middle; display:inline-block; min-width:120px; border-radius: 5px 0 0 5px;}
+  span.event-detail{padding:3px 5px; border:solid 1px #096A9C; border-radius: 0 5px 5px 0; display:inline-block; width: calc(100% - 110px); min-height:27px;}
+  ion-label.label{border:solid 2px #096A9C!important; border-radius: 5px; overflow:hidden;}
+  th{background:#7ECFD3; color: #fff;}
+  .event-detail-container[_ngcontent-c0], .item-block:last-child, .item-wrapper:last-child .item-block, .item-inner, .list-ios > .item-block:first-child{border:none!important;}
+  ion-label.label{margin: 5px 0!important;}
+  ion-list.event-detail-container{margin:0; max-height: 34.5vh; overflow-y:scroll; border-top:none!important}
+  ion-item.in-list{--border-color:#fff; --border:none!important; --min-height: auto;}
+  ion-input input{padding:0 5px!important;}
 }

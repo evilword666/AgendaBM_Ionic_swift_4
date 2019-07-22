@@ -1,4 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,11 +12,22 @@ import { AppComponent } from './app.component';
 import { OpenViduVideoComponent } from './ov-video.component';
 import { UserVideoComponent } from './user-video.component';
 
+import { AppRoutingModule } from './app-routing.module';
+import { VideoAsistenciaComponent } from './video-asistencia/video-asistencia.component';
+
+
 
 @NgModule({
-    declarations: [AppComponent, UserVideoComponent, OpenViduVideoComponent],
+    declarations: [AppComponent, UserVideoComponent, OpenViduVideoComponent, VideoAsistenciaComponent],
     entryComponents: [],
-    imports: [BrowserModule, FormsModule, IonicModule.forRoot(), HttpClientModule],
+    imports: [
+        BrowserModule, 
+        FormsModule, 
+        IonicModule.forRoot(), 
+        HttpClientModule,
+        HttpModule,
+        AppRoutingModule
+    ],
     providers: [
         StatusBar,
         SplashScreen,
