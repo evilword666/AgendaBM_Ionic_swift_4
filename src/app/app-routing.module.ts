@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { VideoAsistenciaComponent } from './video-asistencia/video-asistencia.component';
 const routes: Routes = [
 
-  { path: '', redirectTo: 'VideoAsistencia', pathMatch: 'full' },
+  { path: '', redirectTo: 'Login', pathMatch: 'full' },
   
 
   { path: 'Login', loadChildren: './login/login.module#LoginPageModule' },

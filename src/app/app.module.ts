@@ -11,9 +11,24 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { OpenViduVideoComponent } from './video-asistencia/ov-video.component';
 import { UserVideoComponent } from './video-asistencia/user-video.component';
+import { ModalPageModule } from './modal/modal.module';
+import { NavController, NavParams } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { VideoAsistenciaComponent } from './video-asistencia/video-asistencia.component';
+
+import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
+import { SQLite } from '@ionic-native/sqlite/ngx';
+import { DatabaseService } from './providers/database/database.service';
+
+
+import { NgCalendarModule  } from 'ionic2-calendar';
+import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
+import { BackgroundMode } from '@ionic-native/background-mode/ngx';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
+
+
 
 
 
@@ -26,13 +41,23 @@ import { VideoAsistenciaComponent } from './video-asistencia/video-asistencia.co
         IonicModule.forRoot(), 
         HttpClientModule,
         HttpModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ModalPageModule,
+        NgCalendarModule
     ],
     providers: [
         StatusBar,
         SplashScreen,
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-        AndroidPermissions
+        AndroidPermissions,
+        SQLite,        
+        SQLitePorter,
+        UniqueDeviceID,
+        BackgroundMode,
+        LocalNotifications,
+        NativeAudio,
+        DatabaseService,
+        NavController,
     ],
     bootstrap: [AppComponent]
 })
