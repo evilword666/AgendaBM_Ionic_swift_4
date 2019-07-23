@@ -272,11 +272,11 @@ private generateParticipantInfo() {
 
     this.route.queryParams.subscribe(params => {
 
-        //this.mySessionId = params["session"];
-        //this.myUserName = params["user"];            
+        this.mySessionId = params["session"];
+        this.myUserName = params["user"];            
 
-        this.mySessionId = 'SessionA';
-        this.myUserName = 'Participant' + Math.floor(Math.random() * 100);
+        //this.mySessionId = 'SessionA';
+        //this.myUserName = 'Participant' + Math.floor(Math.random() * 100);
 
         
      });

@@ -59,10 +59,10 @@ export class OpenViduVideoComponent implements AfterViewInit, OnDestroy {
     private applyIosIonicVideoAttributes() {
         const ratio = this._streamManager.stream.videoDimensions.height / this._streamManager.stream.videoDimensions.width;
         this.elementRef.nativeElement.style.width = '100% !important';
-        this.elementRef.nativeElement.style.objectFit = 'fill';
+        this.elementRef.nativeElement.style.objectFit = 'cover';
         this.elementRef.nativeElement.style.zIndex = '-1';
         const computedWidth = this.elementRef.nativeElement.offsetWidth;
-        this.elementRef.nativeElement.style.height = computedWidth * ratio + 'px';
+        this.elementRef.nativeElement.style.height = '100% !important';
         if (!this._streamManager.remote) {
             // It is a Publisher video. Custom iosrtc plugin mirror video
             this.elementRef.nativeElement.style.transform = 'scaleX(-1)';
