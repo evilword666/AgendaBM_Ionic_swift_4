@@ -5,7 +5,7 @@ declare var cordova;
 
 @Component({
     selector: 'ov-video',
-    template: '<video #videoElement style="width: 100%"></video>'
+    template: '<video #videoElement style="object-fit:cover; width:100%; height:100%;"></video>'
 })
 export class OpenViduVideoComponent implements AfterViewInit, OnDestroy {
 

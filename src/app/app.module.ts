@@ -9,8 +9,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
-import { OpenViduVideoComponent } from './ov-video.component';
-import { UserVideoComponent } from './user-video.component';
+import { OpenViduVideoComponent } from './video-asistencia/ov-video.component';
+import { UserVideoComponent } from './video-asistencia/user-video.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { VideoAsistenciaComponent } from './video-asistencia/video-asistencia.component';

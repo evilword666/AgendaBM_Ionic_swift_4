@@ -8,18 +8,18 @@ import { StreamManager } from 'openvidu-browser';
         `
             ov-video {
                 width: 100%;
-                height: auto;
-                float: left;
-                cursor: pointer;
+                height: 100%;
             }
             div div {
                 position: absolute;
-                background: #f8f8f8;
-                padding-left: 5px;
-                padding-right: 5px;
-                color: #777777;
-                font-weight: bold;
-                border-bottom-right-radius: 4px;
+                background: rgba(0,0,0,.7);
+                padding: 5px 10px;
+                color: #fff;
+                border-radius: 0 0 4px 0;
+                top:0;
+                left:0;
+                font-weight:400;
+                font-size:12px;
             }
             p {
                 margin: 0;
@@ -27,10 +27,11 @@ import { StreamManager } from 'openvidu-browser';
         `,
     ],
     template: `
-        <div>
-            <ov-video [streamManager]="streamManager"></ov-video>
-            <div><p>{{getNicknameTag()}}</p></div>
-        </div>`,
+    <div style="width:100%; height:100%">
+         <ov-video [streamManager]="streamManager"></ov-video>
+         <div class="tag">{{getNicknameTag()}}</div>
+     </div>
+     `,
 })
 export class UserVideoComponent {
 
