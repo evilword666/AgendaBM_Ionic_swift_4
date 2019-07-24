@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1056846874683",
+    "firebase_url": "https://agendatopmedicos.firebaseio.com",
+    "project_id": "agendatopmedicos",
+    "storage_bucket": "agendatopmedicos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056846874683:android:c03f8a8145111ba0",
+        "android_client_info": {
+          "package_name": "mx.com.topmedic.agendatopmedic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056846874683-lo1m7u6t0ehqjpa17lsjj6of21sm41fl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpHgL_ArVarK9hW32NlW5pP1r4SV1EPh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056846874683-lfnk762a9b4r0cn47piq3bckqkb6q7ft.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1056846874683-nq4jo45sq7c57tmqv1ppbs6c2p0ccn0e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.com.topmedic.agendatopmedic"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
