@@ -151,14 +151,11 @@
   
   
     
-    ion-fab-button {
-      overflow: visible;
-      position: fixed;
-      right: 10px;
-      bottom: 10px;
+    ion-fab-button {position:absolute;
+
     }
     ion-fab-list {
-      position: absolute; right: 0; min-width:150px; bottom: 0;
+      position: relative; right: 0; min-width:150px; bottom: 0;
       ion-label {
         position: relative;
         top: 10px;
@@ -178,3 +175,4 @@
       }
     }
     #eliminarcita{right:13px; bottom:62px;}
+    .botoncalendario{position:absolute; bottom:0; right: 0; width:25px; height: 25px; color:·fff; background:#096A9C;}
