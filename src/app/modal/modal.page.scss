@@ -9,36 +9,54 @@
       }
         .main-view{
             background: transparent;
+            position: absolute;
+            z-index: -10;
           }
           .overlay {
-            position: fixed;
+            position: absolute;
+            z-index: -10;
             top: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;
+
             opacity: .5;
             background-color: #333;
           }
+
+          
           .modal_content {
+
             position: absolute;
+            
             top: 0;
             left: 0;
             right: 0;
             bottom:0;
+            
+            
             width: calc(100% - 20px);
             max-height: calc(100% - 20px);
+            
             height: auto;
             padding: 10px 10px 80px 10px;
             z-index: 100;
             margin: auto;
             padding: 10px;
+            
             color: #333;
             background: #fff;
+
+            
             border-radius: 5px;
             box-sizing: border-box;
             overflow-y:scroll;
             overflow-x:hidden;
+          
+
           }
+
+
+
           h1{
             text-align: center;
             padding:0;
@@ -68,22 +86,8 @@
           }
           #sexicon{vertical-align: middle; display: inline-block; width: 16px; margin-top:-3px;}
     
-    button[ion-fab] {
-      overflow: visible;
-      position: relative;
-      background-color: #096A9C;
-      ion-label {
-          position: absolute;
-          top: -8px;
-          right: 40px;
-    
-          color: white;
-          background-color: #096A9C;
-          line-height: 24px;
-          padding: 4px 8px;
-          border-radius: 4px;
-      }
-    }
+
+          
     
     #padecimiento{
       padding: 0 5px;
@@ -125,7 +129,7 @@
     .inicioconsulta{color:#00ad14}
     .finconsulta{color: #e50000}
     .bco{}
-    #modificarcita button{background: rgba(255,255,255,1);color:#000; box-shadow: 0 0 2px #000}
+    #modificarcita button{background: rgba(255,255,255,1);color:#000; box-shadow: 0 0 4px #000}
     #modificarcita ion-label{background: rgba(255,255,255,.85);color:#000; box-shadow: 0 0 2px #000}
     
     .button-outline-md, .button-outline-ios{
@@ -134,31 +138,24 @@
       border:none;
       margin:20px 0 10px 0;
     }
-    .fab{
-      contain: layout;
-    }
-    .fab-md{box-shadow: none;}
-    ion-fab{
-      right:10px;
-    }
-    
-    .option {
-      background-color: rgb(114, 166, 233);
-      text-align: center;
-      overflow: visible;
-    }
-    
-  
-  
-    
-    ion-fab-button {position:absolute;
 
+    
+    
+
+    
+    
+  
+  
+    
+    ion-fab-button {
+      margin-left: 140px;
+      overflow: visible;
+      position: relative;
     }
     ion-fab-list {
-      position: relative; right: 0; min-width:150px; bottom: 0;
       ion-label {
         position: relative;
-        top: 10px;
+        top: 40px;
         right: 25px;
         color: white;
         background-color: rgba(0,0,0,0.7);
@@ -174,5 +171,6 @@
         left: 140px;
       }
     }
-    #eliminarcita{right:13px; bottom:62px;}
+
+//#eliminarcita{right:13px; bottom:62px;}
     .botoncalendario{position:absolute; bottom:0; right: 0; width:25px; height: 25px; color:·fff; background:#096A9C;}

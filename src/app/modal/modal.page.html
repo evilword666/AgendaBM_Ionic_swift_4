@@ -16,40 +16,59 @@
     <p class="detallecita"  id="detallescita"><span class="datocita"><ion-icon name="list"></ion-icon> Detalles:</span>{{data.detalles_cita}}</p>
 
     <div id="botonVideoconsulta">
-        <!--<button ion-button outline item-end icon-right color="Primary" [hidden]="((data.tipo_servicio === 'Video asistencia') && (data.checkRango === 'true')) ? false : true" (click)="iniciarVideoconferencia()">Iniciar Video-Asistencia<br>-->
-<!--        <ion-button outline item-end icon-right color="secondary" [hidden]="((data.tipo_servicio === 'Video asistencia') && (data.checkRango === 'true')) ? false : true" (click)="iniciarVideoconferencia()">Iniciar Video-Asistencia<br>  -->
-<!-- <ion-button outline item-end icon-right color="secondary" [hidden]="((data.tipo_servicio === 'VideoAsesoria') && (data.checkRango === 'true')) ? false : true" (click)="iniciarVideoconferencia()">Iniciar Video-Asistencia<br>-->
-  <!--<ion-button outline item-end icon-right color="secondary" [hidden]="data.checkRango == 'true' ? false : true" (click)="iniciarVideoconferencia()">Iniciar Video-Asistencia<br>-->
         <ion-button outline item-end icon-right color="secondary" [hidden]="statusmostrarBotonVideoAsistenia ? false : true" (click)="iniciarVideoconferencia()">Iniciar Video-Asistencia<br>
         <ion-icon name="ios-videocam"></ion-icon>
       </ion-button>
     </div>
-<!--
-    <ion-fab>
-      <ion-fab-button>
-          <ion-icon name="md-calendar" large></ion-icon>
-       </ion-fab-button>
-       <ion-fab-list id="modificarcita" side="top"> 
-        <ion-fab-button class="option" color="danger" (click)="eliminarCita()" ><ion-label>Cancelar cita</ion-label><ion-icon name="ios-trash"></ion-icon></ion-fab-button>                              
-      </ion-fab-list>
-    </ion-fab>
--->
 
-    <ion-fab vertical="bottom" horizontal="end">
-      
+
+
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed" > 
+
       <ion-fab-button vertical="bottom" horizontal="end">
         <ion-icon name="md-calendar"></ion-icon>
       </ion-fab-button>
   
-      <ion-fab-list>
+
+        <ion-fab-list side="top" id="modificarcita">
 
         <ion-fab-button id="eliminarcita" (click)="eliminarCita()">
           <ion-icon name="ios-trash"></ion-icon>
         </ion-fab-button>
         <ion-label>Cancelar cita</ion-label>
+          
    
       </ion-fab-list>
     </ion-fab>
+  
+
+  <!--
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      
+      
+      <ion-fab-button>
+        <ion-icon name="cog"></ion-icon>
+      </ion-fab-button>
+  
+      <ion-fab-list side="top">
+        <ion-fab-button>
+          <ion-icon name="cart"></ion-icon>
+        </ion-fab-button>
+        <ion-label>lavel 1</ion-label>
+  
+        <ion-fab-button>
+          <ion-icon name="clipboard"></ion-icon>
+        </ion-fab-button>
+        <ion-label>lavel 2</ion-label>
+  
+        <ion-fab-button>
+          <ion-icon name="archive"></ion-icon>
+        </ion-fab-button>
+        <ion-label>lavel 3</ion-label>
+  
+      </ion-fab-list>
+    </ion-fab>
+-->
 
   </div>
   

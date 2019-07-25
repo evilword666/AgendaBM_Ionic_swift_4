@@ -29,7 +29,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
 
-//import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
+import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
 
 
 
@@ -59,7 +59,7 @@ import { NativeAudio } from '@ionic-native/native-audio/ngx';
         NativeAudio,
         DatabaseService,
         NavController,
-        //Push,
+        Push,
     ],
     bootstrap: [AppComponent]
 })

@@ -8,7 +8,7 @@ import { OpenVidu, Publisher, Session, StreamEvent, StreamManager, Subscriber } 
 import { throwError as observableThrowError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-//import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
+import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
 
 
 declare var cordova;
@@ -27,14 +27,14 @@ export class AppComponent implements OnDestroy {
 
     //rootPage:any = OpenviduVideoAsistenciaComponent;
 
-    constructor(private statusBar: StatusBar, private platform: Platform,/*private push: Push*/){
+    constructor(private statusBar: StatusBar, private platform: Platform,private push: Push){
 
       this.statusBar.backgroundColorByHexString('#989aa2');
       this.statusBar.overlaysWebView(false);
 
         this.platform.ready().then(() => {
 
-          //this.pushSetup()
+          this.pushSetup()
        
           });
         
@@ -42,7 +42,7 @@ export class AppComponent implements OnDestroy {
     }
 
 
-/*
+
     pushSetup(){
 
       // to check if we have permission
@@ -123,7 +123,7 @@ export class AppComponent implements OnDestroy {
   
   }
     
-  */
+  
   
 
 
