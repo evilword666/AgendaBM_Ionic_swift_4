@@ -1,0 +1,1 @@
+cuando compile la plataforma de ios con una version inferior a la 4.2 se tiene que eliminar la plataforma, despues se tiene que dar permisos a toda la carpeta del proyecto con chmod -R 777 <Nombre de la carpeta del proyecto>  y nuevamente ejecutar el comando para compilar sin ser super usuario 
