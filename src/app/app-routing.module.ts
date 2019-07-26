@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'Login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'VideoAsistencia', component: VideoAsistenciaComponent},   
-  { path: 'Modal', loadChildren: './modal/modal.module#ModalPageModule' }
+  { path: 'Modal', loadChildren: './modal/modal.module#ModalPageModule' },
+  { path: 'Demo', loadChildren: './demo/demo.module#DemoPageModule' }
  
 
 ];

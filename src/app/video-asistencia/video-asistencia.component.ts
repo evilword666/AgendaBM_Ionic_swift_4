@@ -190,7 +190,7 @@ leaveSession() {
 
     if (this.session) {
         this.session.disconnect();
-        this.navCtrl.navigateForward('/home')
+        
     }
 
     // Empty all properties...
@@ -199,6 +199,9 @@ leaveSession() {
     delete this.session;
     delete this.OV;
     this.generateParticipantInfo();
+
+    //this.navCtrl.navigateForward('/home')
+    this.navCtrl.navigateForward('/Demo')
 }
 
 refreshVideos() {

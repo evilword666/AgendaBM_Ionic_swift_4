@@ -80,10 +80,15 @@ ion-footer ion-toolbar img{max-width: 75px;}
     border-bottom:solid 1px #096A9C;
     border-right: solid 1px #096A9C;
     border-radius: 0 5px 5px 0;
-    height: 33px;
     box-sizing: border-box;
     margin: 0;
     --ion-color-shade: #fff;
+}
+.ios{
+    #botonLogin{ height: 33px; }
+}
+.md{
+    #botonLogin{ height: 30px; }
 }
 #botonLogin:hover{
     --background:white;
