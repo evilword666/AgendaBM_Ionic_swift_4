@@ -38,21 +38,18 @@
     <div id="session-header">
     </div>
 
-    <ion-grid>
-      <!--Subscribers and Publishers-->
-      <ion-row>
-        <ion-col size="12" *ngFor="let sub of subscribers">
+
+        <div class="videoremotocont" *ngFor="let sub of subscribers">
           <div class="stream-container">
             <user-video  class="videoremoto" [streamManager]="sub"></user-video>
           </div>
-        </ion-col>
-        <ion-col size="4">
+        </div>
+        <div class="videolocalcont">
           <div *ngIf="publisher" class="stream-container">
             <user-video  class="videolocal" [streamManager]="publisher"></user-video>
           </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+        </div>
+
 
     <ion-fab vertical="bottom" horizontal="center" slot="fixed">
       <ion-fab-button size="small" color="secondary" (click)="leaveSession()">

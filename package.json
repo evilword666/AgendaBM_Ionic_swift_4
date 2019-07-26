@@ -55,6 +55,7 @@
     "ionic2-calendar": "^0.5.2",
     "ios-deploy": "1.9.4",
     "openvidu-browser": "^2.8.0",
+    "phonegap-plugin-multidex": "^1.0.0",
     "phonegap-plugin-push": "^2.2.3",
     "rxjs": "6.5.1",
     "uk.co.workingedge.cordova.plugin.sqliteporter": "^1.1.0",
@@ -116,7 +117,8 @@
     },
     "platforms": [
       "browser",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }

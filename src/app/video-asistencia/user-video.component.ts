@@ -9,6 +9,7 @@ import { StreamManager } from 'openvidu-browser';
             ov-video {
                 width: 100%;
                 height: 100%;
+    
             }
             div div {
                 position: absolute;
@@ -21,6 +22,7 @@ import { StreamManager } from 'openvidu-browser';
                 font-weight:400;
                 font-size:12px;
             }
+          
             p {
                 margin: 0;
             }
@@ -29,7 +31,7 @@ import { StreamManager } from 'openvidu-browser';
     template: `
     <div style="width:100%; height:100%">
          <ov-video [streamManager]="streamManager"></ov-video>
-         <div class="tag">{{getNicknameTag()}}</div>
+         <div>{{getNicknameTag()}}</div>
      </div>
      `,
 })

@@ -5,7 +5,7 @@ declare var cordova;
 
 @Component({
     selector: 'ov-video',
-    template: '<video #videoElement style="object-fit:cover; width:100%; height:100%;"></video>'
+    template: '<video #videoElement style="object-fit:cover; width:100%; height:100%; z-index:-1;"></video>'
 })
 export class OpenViduVideoComponent implements AfterViewInit, OnDestroy {
 
@@ -60,12 +60,13 @@ export class OpenViduVideoComponent implements AfterViewInit, OnDestroy {
         const ratio = this._streamManager.stream.videoDimensions.height / this._streamManager.stream.videoDimensions.width;
         this.elementRef.nativeElement.style.width = '100% !important';
         this.elementRef.nativeElement.style.objectFit = 'cover';
-        this.elementRef.nativeElement.style.zIndex = '-1';
+        this.elementRef.nativeElement.style.zIndex = '-10';
         const computedWidth = this.elementRef.nativeElement.offsetWidth;
         this.elementRef.nativeElement.style.height = '100% !important';
         if (!this._streamManager.remote) {
             // It is a Publisher video. Custom iosrtc plugin mirror video
             this.elementRef.nativeElement.style.transform = 'scaleX(-1)';
+            this.elementRef.nativeElement.style.zIndex = '-1';
         }
         cordova.plugins.iosrtc.refreshVideos();
     }
