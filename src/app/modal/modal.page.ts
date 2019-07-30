@@ -247,7 +247,18 @@ export class ModalPage implements OnInit {
       }
   };
   //this.navCtrl.navigateForward(['/VideoAsistencia'], navigationExtras);
-  this.navCtrl.navigateForward(['/Demo'], navigationExtras);
+
+  if (this.plt.is('ios')) {
+  
+    this.navCtrl.navigateForward(['/Demo'], navigationExtras);
+
+  }else if (this.plt.is('android')) {
+
+    this.navCtrl.navigateForward(['/VideoAsistencia'], navigationExtras);
+    
+  }
+
+
     
   }
 
