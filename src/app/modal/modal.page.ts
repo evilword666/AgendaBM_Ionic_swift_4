@@ -254,8 +254,9 @@ export class ModalPage implements OnInit {
 
   }else if (this.plt.is('android')) {
 
-    this.navCtrl.navigateForward(['/VideoAsistencia'], navigationExtras);
-    
+//    this.navCtrl.navigateForward(['/VideoAsistencia'], navigationExtras);
+    this.navCtrl.navigateForward(['/Demo'], navigationExtras);
+
   }
 
 
