@@ -14,7 +14,9 @@ export class OpenViduVideoComponent implements AfterViewInit, OnDestroy {
 
     rotationFunction;
 
-    constructor(private platform: Platform) {}
+    constructor(private platform: Platform) {
+        //localStorage.setItem("statusConexionVideoAsistencia","false")
+    }
 
     ngAfterViewInit() {
         if (this.isIos() && this._streamManager.remote) {
@@ -54,6 +56,9 @@ export class OpenViduVideoComponent implements AfterViewInit, OnDestroy {
                 this.applyIosIonicVideoAttributes();
             };
         }
+
+        //localStorage.setItem("statusConexionVideoAsistencia","true")
+        
     }
 
     private applyIosIonicVideoAttributes() {

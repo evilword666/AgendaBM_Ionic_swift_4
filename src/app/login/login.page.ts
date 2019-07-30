@@ -115,8 +115,9 @@ ngOnInit(): void {
     setTimeout(() => {
       
     this.loading.dismiss(); //Se aumento un tiempo por que como al lanzar el alert es asincrono a veces trataba de minimizar el spinner antes de que apareciera y se quedaba cargando
-    //    this.navCtrl.push(HomePage);    
-        this.navCtrl.navigateForward('/Demo')
+        //this.navCtrl.push(HomePage);    
+        //this.navCtrl.navigateForward('/Demo')
+        this.navCtrl.navigateForward('/home')
         
     }, 1000);
     

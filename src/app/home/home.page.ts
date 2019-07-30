@@ -59,6 +59,7 @@ export class HomePage implements OnInit {
     mode: 'month',    
     currentDate: new Date(),
     //locale: 'es-MX',
+
   };
  
   @ViewChild(CalendarComponent) myCal: CalendarComponent;

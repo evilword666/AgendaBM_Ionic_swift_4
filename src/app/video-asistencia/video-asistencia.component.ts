@@ -14,6 +14,9 @@ declare var cordova;
 
 
 
+
+
+
 @Component({
   selector: 'app-video-asistencia',
   templateUrl: './video-asistencia.component.html',
@@ -21,9 +24,18 @@ declare var cordova;
 })
 export class VideoAsistenciaComponent implements OnInit {
 
+    fondoVideoAsistencia:any="videoinactivo";
+    estadoClaseActual:boolean=false;
+    textoAmostrar:String="Esperando al paciente...";
+    statusConexionVideoAsistencia:any="false";
+
+
   ngOnInit() {
     this.OPENVIDU_SERVER_URL=  'https://topmeddr.com:4443';
     this.joinSession()
+
+    this.fondoVideoAsistencia="videoactivo";
+    this.estadoClaseActual = true;
 }
 
 
@@ -59,9 +71,10 @@ constructor(
     public alertController: AlertController
 ) {
 
+    //this.statusConexionVideoAsistencia=localStorage.getItem("statusConexionVideoAsistencia");
     
 
-    
+    //alert(this.statusConexionVideoAsistencia)
 
     /*
     this.route.params.subscribe(params => {
@@ -200,8 +213,11 @@ leaveSession() {
     delete this.OV;
     this.generateParticipantInfo();
 
-    //this.navCtrl.navigateForward('/home')
-    this.navCtrl.navigateForward('/Demo')
+    //localStorage.setItem("statusConexionVideoAsistencia","false")
+
+    this.navCtrl.navigateForward('/home')
+    //this.navCtrl.navigateForward('/Demo')
+    
 }
 
 refreshVideos() {
@@ -341,9 +357,13 @@ async presentSettingsAlert() {
  */
 
 getToken(): Promise<string> {
+
+    //alert(this.OPENVIDU_SERVER_URL)
+
     if (this.platform.is('ios') && this.platform.is('cordova') && this.OPENVIDU_SERVER_URL === 'https://localhost:4443') {
         // To make easier first steps with iOS apps, use demos OpenVidu Sever if no custom valid server is configured
         this.OPENVIDU_SERVER_URL = 'https://demos.openvidu.io:4443';
+        alert("Entrando a un servidor local")
     }
     return this.createSession(this.mySessionId).then((sessionId) => {
         return this.createToken(sessionId);

@@ -30,3 +30,14 @@ ion-header ion-toolbar{height:100%;}
 .videoremoto{position:fixed; bottom:0; left:0; width: 100vw; height: calc(100vh - 56px);}
 
 .videolocal{position:fixed; bottom:10px; right: 10px; width:35%; height:20%;}
+
+
+
+.videoinactivo{background: #fff;}
+.videoactivo{background: none!important;}
+.transparente{ --ion-background-color: transparent; }
+
+
+#textoAmostrar{
+    text-align: center
+}

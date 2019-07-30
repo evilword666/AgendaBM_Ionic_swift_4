@@ -27,9 +27,15 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
-
-
 import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
+
+
+
+import { LOCALE_ID } from '@angular/core';
+
+import { registerLocaleData } from '@angular/common';
+import localeMx from '@angular/common/locales/es-MX';
+registerLocaleData(localeMx);
 
 
 
@@ -60,6 +66,7 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
         DatabaseService,
         NavController,
         Push,
+        { provide: LOCALE_ID, useValue: 'es-MX' }
     ],
     bootstrap: [AppComponent]
 })

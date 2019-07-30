@@ -229,7 +229,12 @@ export class ModalPage implements OnInit {
     //this.iab.create(this.data.link_token,'_system');    
     //alert("Entrando a la funcion para redirigir a la videoconferencia")
 
-    
+  /*
+    setTimeout(() => {
+      this.modalCtrl.dismiss()
+    }, 500);
+  */
+
     this.modalCtrl.dismiss()
 
 
@@ -241,10 +246,8 @@ export class ModalPage implements OnInit {
           session: this.data.link_token_original
       }
   };
-  this.navCtrl.navigateForward(['/VideoAsistencia'], navigationExtras);
-
-  
-  //this.navCtrl.navigateForward('/videoasistencia')    
+  //this.navCtrl.navigateForward(['/VideoAsistencia'], navigationExtras);
+  this.navCtrl.navigateForward(['/Demo'], navigationExtras);
     
   }
 
