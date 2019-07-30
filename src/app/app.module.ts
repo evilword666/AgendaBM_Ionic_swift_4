@@ -35,12 +35,13 @@ import { LOCALE_ID } from '@angular/core';
 
 import { registerLocaleData } from '@angular/common';
 import localeMx from '@angular/common/locales/es-MX';
+import { EsperaComponent } from './espera/espera.component';
 registerLocaleData(localeMx);
 
 
 
 @NgModule({
-    declarations: [AppComponent, UserVideoComponent, OpenViduVideoComponent, VideoAsistenciaComponent],
+    declarations: [AppComponent, UserVideoComponent, OpenViduVideoComponent, VideoAsistenciaComponent, EsperaComponent],
     entryComponents: [],
     imports: [
         BrowserModule, 

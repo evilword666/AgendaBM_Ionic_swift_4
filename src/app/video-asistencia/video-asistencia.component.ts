@@ -27,7 +27,7 @@ export class VideoAsistenciaComponent implements OnInit {
     fondoVideoAsistencia:any="videoinactivo";
     estadoClaseActual:boolean=false;
     textoAmostrar:String="Esperando al paciente...";
-    statusConexionVideoAsistencia:any="false";
+    usuarioRemotoConectado:any="false";
 
 
   ngOnInit() {
@@ -70,18 +70,6 @@ constructor(
     private androidPermissions: AndroidPermissions,
     public alertController: AlertController
 ) {
-
-    //this.statusConexionVideoAsistencia=localStorage.getItem("statusConexionVideoAsistencia");
-    
-
-    //alert(this.statusConexionVideoAsistencia)
-
-    /*
-    this.route.params.subscribe(params => {
-        let usuario = params['user']; 
-        let sesion = params['session']; 
-   });
-   */
 
     this.initializeApp();
     this.generateParticipantInfo();
@@ -136,6 +124,7 @@ joinSession() {
         // so OpenVidu doesn't create an HTML video on its own
         const subscriber: Subscriber = this.session.subscribe(event.stream, undefined);
         this.subscribers.push(subscriber);
+        this.usuarioRemotoConectado = "true"
     });
 
     // On every Stream destroyed...
@@ -213,7 +202,6 @@ leaveSession() {
     delete this.OV;
     this.generateParticipantInfo();
 
-    //localStorage.setItem("statusConexionVideoAsistencia","false")
 
     this.navCtrl.navigateForward('/home')
     //this.navCtrl.navigateForward('/Demo')
