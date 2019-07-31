@@ -371,14 +371,27 @@ async verDetallesEventoModal(evento){
 
   myModal.onDidDismiss()
   .then((data) => {
-    const dataBack = data['data']; // Here's your selected user!
-    console.log('data came back from modal');
-    console.log("Datos de regreso: "+JSON.stringify(dataBack));
-    //alert("data came back from modal: "+dataBack['eliminado'])
-    //alert("Localstorage: "+localStorage.getItem("statusEliminarCita"))
-    if(localStorage.getItem("statusEliminarCita") == "true"){
-      this.consultarHorariosBDremota2();
-    }
+
+    setTimeout(() => {//Agregamos un timeout por que en ios se guarda mas lento la variable local y por tanto nos regresa valores false
+
+
+      const dataBack = data['data']; // Here's your selected user!
+      console.log('data came back from modal');
+      console.log("Datos de regreso: "+JSON.stringify(dataBack));
+      console.log("Datos de regreso localstorage home: "+localStorage.getItem("statusEliminarCita"));
+      //alert("data came back from modal: "+dataBack['eliminado'])
+      //alert("Localstorage: "+localStorage.getItem("statusEliminarCita"))
+      if(localStorage.getItem("statusEliminarCita") == "true"){
+        this.consultarHorariosBDremota2();
+      }
+
+      
+    }, 500);
+
+
+
+
+
 
 });
 

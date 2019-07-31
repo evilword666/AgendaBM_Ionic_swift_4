@@ -136,7 +136,8 @@ export class ModalPage implements OnInit {
             //alert("statusEliminarCita: "+this.statusEliminarCita)
 
             localStorage.setItem("statusEliminarCita",this.statusEliminarCita+"")
-          
+          //alert( localStorage.getItem("statusEliminarCita") )
+          console.log("Datos de regreso localstorage en el modal: "+localStorage.getItem("statusEliminarCita"));
             //this.closeModal(true)
             
             this.exitoEliminacionCita(); 
