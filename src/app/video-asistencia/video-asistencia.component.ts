@@ -131,6 +131,7 @@ joinSession() {
     this.session.on('streamDestroyed', (event: StreamEvent) => {
         // Remove the stream from 'subscribers' array
         this.deleteSubscriber(event.stream.streamManager);
+        
     });
 
     // --- 4) Connect to the session with a valid user token ---
@@ -201,7 +202,6 @@ leaveSession() {
     delete this.session;
     delete this.OV;
     this.generateParticipantInfo();
-
 
     this.navCtrl.navigateForward('/home')
     //this.navCtrl.navigateForward('/Demo')
@@ -294,6 +294,7 @@ private deleteSubscriber(streamManager: StreamManager): void {
     const index = this.subscribers.indexOf(streamManager, 0);
     if (index > -1) {
         this.subscribers.splice(index, 1);
+        this.usuarioRemotoConectado = "false"
     }
 }
 

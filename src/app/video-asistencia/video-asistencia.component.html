@@ -6,8 +6,16 @@
       <img class="demo-logo" src="../assets/images/openvidu_vert_white_bg_trans_cropped.png" />
     </ion-toolbar>
   </ion-header>
-<!--
-  <ion-content padding *ngIf="!session">
+
+  <!--
+    <ion-content padding *ngIf="usuarioRemotoConectado=='false'" >
+<h1>Esto aparecerea hasta que se conecte un usuario remeoto</h1>
+      </ion-content>
+    -->
+
+<!--  
+  
+  <ion-content padding *ngIf="!session">-
     
     <ion-button (click)="regresar()">Regresar</ion-button>
     <div id="img-div"><img src="../assets/images/openvidu_grey_bg_transp_cropped.png" /></div>
@@ -31,11 +39,13 @@
       </ion-fab-button>
     </ion-fab>
   </ion-content>
+
 -->
 
 
 <!--  <ion-content [scrollEvents]="true" (ionScroll)="refreshVideos()" *ngIf="session">  -->
-    <ion-content [scrollEvents]="true" (ionScroll)="refreshVideos()" class="bgaaa">  
+<!--    <ion-content [scrollEvents]="true" (ionScroll)="refreshVideos()" *ngIf="usuarioRemotoConectado=='true'">  -->
+    <ion-content [scrollEvents]="true" (ionScroll)="refreshVideos()" > 
     <div id="session-header">
     </div>
 
