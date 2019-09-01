@@ -499,53 +499,35 @@ public playAudio(){
 
   //Desde aqui da errores
   consultarHorariosBDremota2(){
-
-  
     console.log("Estado notificacion recibida: "+localStorage.getItem("NotificacionRecibida"))
-    //alert("Se haran cambios en la base local por que se detectó una notificacion") 
 
-    var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';
-    
-    var id_medico = JSON.stringify({id_medico: window.localStorage.getItem("id_doctor")});
-          
+    var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';    
+    var id_medico = JSON.stringify({id_medico: window.localStorage.getItem("id_doctor")});          
       this.http.post(link, id_medico)
       .subscribe(data => {
           this.data.response = data["_body"]; 
-
           this.resp = JSON.parse(this.data.response);
-
-          //alert("RespValue: "+this.resp['respValue'])
-
                 if(this.resp['respValue'] == "200" ){
                   this.horarios_medico = JSON.stringify(this.resp['horarios']);
                   this.numeroFilas = JSON.stringify(this.resp['numFilas']);
                   console.log("Resultado consulta: "+JSON.stringify(this.resp))
                   window.localStorage.setItem("numFilasDBActual",this.numeroFilas)
-                  //alert("LocalStorageXD: "+window.localStorage.getItem("numFilasDBremota")+" numberFilas:"+this.numeroFilas)
-                                
                   //Limpiamos la BD local para poder insertar los nuevos valores de la BD remota
-                  //alert("Hay datos nuevos que agregar ")
                   this.isPainted = false;
                   this.eventsCalendar.splice(0,this.eventsCalendar.length) //Vaciar el arreglo que contiene los elementos a pintar en el calendario
                   this.clearTable();       
-                  //alert("Estado notificacion: "+localStorage.getItem("NotificacionRecibida"))
                   if(localStorage.getItem("NotificacionRecibida")=="1"){
-                    //alert("Ha llegado una notificacion!")
                     this.lanzarNotificacion();
-                  }
-                  //this.playAudio(); //Esta funcion la utilizabamos antes de usar las notificaciones
+                  }                  
                   localStorage.setItem("NotificacionRecibida","0")
-              }else if(this.resp['respValue'] == "400" ){
-                //this.resp="400"
+              }else if(this.resp['respValue'] == "400" ){                
                 this.loading.dismiss();
                 if(localStorage.getItem("alertDatosConsultadosLanzada") == "0"){
                   this.clearCalendar()
-                  alert("No hay citas disponibles")
-                  //this.consultarHorariosBDremota2()
+                  alert("No hay citas disponibles")                  
                 }
                 localStorage.setItem("alertDatosConsultadosLanzada","1")               
               }
-
       },  error => {
           console.log("Oooops!");
           alert("No se pudieron enviar los datos\nIntentelo mas tarde");
@@ -559,42 +541,25 @@ public playAudio(){
 
 
 insertIdMedicoToken(){    
-
-  //var link = 'http://93.104.215.239/ecg_mqtt/DATABASE/insertarAgendaMedicos.php';
+  
   var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';
   
-  var id_token = JSON.stringify({id_medico: window.localStorage.getItem("id_doctor"), tokenPhoneMedico:localStorage.getItem("phoneToken"),UUID_Phone:localStorage.getItem("UUID_Phone")});
-        
-  
-  //alert("Se enviaran los datos: "+id_token)
-
+  var id_token = JSON.stringify({id_medico: window.localStorage.getItem("id_doctor"), tokenPhoneMedico:localStorage.getItem("phoneToken"),UUID_Phone:localStorage.getItem("UUID_Phone")});        
         try {
-
           this.http.post(link, id_token)                  
-          .subscribe(data => {              
-    
-            this.data2.response = data["_body"]; 
-
-            //alert(JSON.stringify(this.data2.response))
-   
-            var resp = JSON.parse(this.data2.response);                            
-            
+          .subscribe(data => {                  
+            this.data2.response = data["_body"];               
+            var resp = JSON.parse(this.data2.response);                                        
                 if(resp['response'] == "200"){
-                      //alert("Se insertaron correctamente los datos en la bd")
                       console.log("Se insertaron correctamente los datos en la bd")
-                }else if(resp['response'] == "100"){
-                  //alert("Los datos de este medico ya se habian registraron en la BD")
+                }else if(resp['response'] == "100"){                  
                   console.log("El token de las notificaciones push se ha actualizado en la BD")
-                }else{
-                  //alert("No se pudieron insertar los datos :(")
+                }else{                  
                   console.log("No se pudieron insertar los datos :(")
-                }
-                
+                }                
             }, error => {
-
               alert("No se pudieron enviar los datos\nIntentelo mas tarde");          
-            });
-    
+            });    
           } catch (error) {
             alert("Hay un error en el servidor")
           }        
