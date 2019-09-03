@@ -31,7 +31,8 @@ export class VideoAsistenciaComponent implements OnInit {
 
 
   ngOnInit() {
-    this.OPENVIDU_SERVER_URL=  'https://topmeddr.com:4443';
+//    this.OPENVIDU_SERVER_URL=  'https://topmeddr.com:4443';
+    this.OPENVIDU_SERVER_URL=  'https://vid.botonmedico.com:4443';
     this.joinSession()
 
     this.fondoVideoAsistencia="videoactivo";
@@ -305,7 +306,8 @@ async presentSettingsAlert() {
             {
                 name: 'url',
                 type: 'text',
-                value: 'https://topmeddr.com:4443/',
+//                value: 'https://topmeddr.com:4443/',
+                value: 'https://vid.botonmedico.com:4443/',
                 placeholder: 'URL'
             },
             {

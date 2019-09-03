@@ -31,8 +31,12 @@ export class LoginPage implements OnInit {
   }
   
 ngOnInit(): void {
-  this.user = "promedic.romero@gmail.com";
-  this.pass = "b44ESjktTOhNba@6&Y";  
+  //this.user = "promedic.romero@gmail.com";
+  //this.pass = "b44ESjktTOhNba@6&Y";  
+
+  this.user = "draLucy";
+  this.pass = "ijPEKtTYV!hY";  
+
 }
 
   async presentLoadingCustom() {
@@ -134,7 +138,8 @@ ngOnInit(): void {
       //alert("boton presionado!")
 //      var link = 'http://93.104.215.239/ecg_mqtt/DATABASE/agendaMedicos.php';
 //      var link = 'https://topmedic.com.mx/accessDatabase/AgendaTopMedicos/agendaMedicos.php';     
-      var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';            
+      //var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';            
+      var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';            
       var credentials = JSON.stringify({username: this.user,password:this.pass});
       //alert(credentials)
 

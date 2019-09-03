@@ -501,7 +501,8 @@ public playAudio(){
   consultarHorariosBDremota2(){
     console.log("Estado notificacion recibida: "+localStorage.getItem("NotificacionRecibida"))
 
-    var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';    
+//    var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';    
+  var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';
     var id_medico = JSON.stringify({id_medico: window.localStorage.getItem("id_doctor")});          
       this.http.post(link, id_medico)
       .subscribe(data => {
@@ -542,7 +543,8 @@ public playAudio(){
 
 insertIdMedicoToken(){    
   
-  var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';
+//  var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';
+  var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';
   
   var id_token = JSON.stringify({id_medico: window.localStorage.getItem("id_doctor"), tokenPhoneMedico:localStorage.getItem("phoneToken"),UUID_Phone:localStorage.getItem("UUID_Phone")});        
         try {
@@ -831,7 +833,7 @@ loadEvents() {
     //Agregar eventos uno a uno de la base de datos
   //createEvent(title, location, notes, startDate, endDate)
   addSchedules(dateM, startHour, endHour, description){
-  
+  console.log("fecha: "+dateM+"\n"+"Inicio: "+startHour+"\n"+"Fin: "+endHour+"\n"+"Descripcion: "+description+"\n")
     var startTime;
     var endTime;
     

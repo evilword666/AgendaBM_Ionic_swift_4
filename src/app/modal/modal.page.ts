@@ -78,7 +78,7 @@ export class ModalPage implements OnInit {
     this.checkRango = this.verificarRangoDeFechasPorCita(this.data.fecha_consulta,this.data.hora_inicio,this.data.hora_fin)
     //alert(this.checkRango)
 
-    this.statusmostrarBotonVideoAsistenia = (this.checkRango && (this.data.tipo_servicio == "VideoAsesoria"))
+    this.statusmostrarBotonVideoAsistenia = (this.checkRango && (this.data.tipo_servicio == "video_consulta"))
     //alert("ResComp: "+this.statusmostrarBotonVideoAsistenia)
   }
 
