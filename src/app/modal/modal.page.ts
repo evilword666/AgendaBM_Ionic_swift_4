@@ -113,7 +113,8 @@ export class ModalPage implements OnInit {
 
 
   eliminarCitaDB(){
-    var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';            
+    //var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';            
+    var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';    
     var credentials = JSON.stringify({booking_key_delete : this.data.link_token_original});
     
     try {
