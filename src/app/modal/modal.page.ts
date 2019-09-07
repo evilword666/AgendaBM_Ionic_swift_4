@@ -67,7 +67,7 @@ export class ModalPage implements OnInit {
     this.data.hora_fin  = data.horb;
     this.data.detalles_cita = data.descripcion;
     this.data.tipo_servicio = data.tipo_servicio;
-    this.data.link_token = "https://topmeddr.com:3005/"+data.link_token+"/d";
+    this.data.link_token = "https://vid.botonmedico.com:3005/"+data.link_token+"/d";
     this.data.link_token_original = data.link_token;  
 
     this.data.booking_id=data.booking_id;
@@ -114,7 +114,8 @@ export class ModalPage implements OnInit {
 
   eliminarCitaDB(){
     //var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';            
-    var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';    
+    //var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';    
+    var link = 'http://exp.botonmedico.com/wp_DB/service/recibirDatos.php';    
     var credentials = JSON.stringify({booking_key_delete : this.data.link_token_original});
     
     try {

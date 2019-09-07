@@ -139,7 +139,13 @@ ngOnInit(): void {
 //      var link = 'http://93.104.215.239/ecg_mqtt/DATABASE/agendaMedicos.php';
 //      var link = 'https://topmedic.com.mx/accessDatabase/AgendaTopMedicos/agendaMedicos.php';     
       //var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';            
-      var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';            
+      
+      
+      var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';      
+
+
+      //var link = 'http://exp.botonmedico.com/wp_DB/service/recibirDatos.php';      
+      
       var credentials = JSON.stringify({username: this.user,password:this.pass});
       //alert(credentials)
 

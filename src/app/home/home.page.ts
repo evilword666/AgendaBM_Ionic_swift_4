@@ -502,7 +502,10 @@ public playAudio(){
     console.log("Estado notificacion recibida: "+localStorage.getItem("NotificacionRecibida"))
 
 //    var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';    
-  var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';
+  //var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';
+  var link = 'http://exp.botonmedico.com/wp_DB/service/recibirDatos.php';
+
+
     var id_medico = JSON.stringify({id_medico: window.localStorage.getItem("id_doctor")});          
       this.http.post(link, id_medico)
       .subscribe(data => {
@@ -544,7 +547,8 @@ public playAudio(){
 insertIdMedicoToken(){    
   
 //  var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';
-  var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';
+//  var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';
+var link = 'http://exp.botonmedico.com/wp_DB/service/recibirDatos.php';
   
   var id_token = JSON.stringify({id_medico: window.localStorage.getItem("id_doctor"), tokenPhoneMedico:localStorage.getItem("phoneToken"),UUID_Phone:localStorage.getItem("UUID_Phone")});        
         try {
@@ -737,6 +741,10 @@ rellenarArregloConConsultaBDremota(){
                 var booking_id = JSON.stringify(element['booking_id'])
                 var edad_paciente = JSON.stringify(element['edad_paciente'])
                 var Sexo = JSON.stringify(element['Sexo'])
+
+
+                
+                
                 var padecimiento = JSON.stringify(element['padecimiento'])
 
               
@@ -754,7 +762,18 @@ rellenarArregloConConsultaBDremota(){
                 var booking_id_SC = booking_id.replace(/"/g, ''); 
 
                 var edad_paciente_SC = edad_paciente.replace(/"/g, ''); 
-                var Sexo_SC = Sexo.replace(/"/g, ''); 
+                var Sexo_SC_n = Sexo.replace(/"/g, ''); 
+
+//Filtro para saber si es hombre o mujer
+var Sexo_SC = "";
+
+if(Sexo_SC_n =="1"){
+  Sexo_SC = "Hombre";
+}else if(Sexo_SC_n == "2"){
+  Sexo_SC = "Mujer";
+}
+
+
                 var padecimiento_SC = padecimiento.replace(/"/g, '');
 
 
