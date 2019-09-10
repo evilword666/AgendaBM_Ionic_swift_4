@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { OpenViduVideoComponent } from './video-asistencia/ov-video.component';
 import { UserVideoComponent } from './video-asistencia/user-video.component';
 import { ModalPageModule } from './modal/modal.module';
+import { ModalExpedientePageModule } from './modal-expediente/modal-expediente.module';
+
 import { NavController, NavParams } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -51,6 +53,7 @@ registerLocaleData(localeMx);
         HttpModule,
         AppRoutingModule,
         ModalPageModule,
+        ModalExpedientePageModule,
         NgCalendarModule
     ],
     providers: [

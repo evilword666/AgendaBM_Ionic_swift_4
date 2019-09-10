@@ -98,3 +98,21 @@ ion-input#userlogin{border:solid 1px #096A9C; border-radius: 0 5px 5px 0; paddin
 ion-input#pwd{border-top:solid 1px #096A9C; border-bottom:solid 1px #096A9C; padding-top:5px!important; padding-bottom:4px!important;}
 .defaultClassDatLab{border-right: solid 1px #096A9C; border-radius:0 5px 5px 0;}
 .ClaseNuevaAsignada{border-right:none!important; border-radius: 0;}
+
+ion-fab{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: right;
+  }
+
+/*
+  .btnExpPresionado{
+    visibility: hidden;    
+  }
+  .btnExpNoPresionado{
+    visibility: visible;
+    //visibility: hidden;
+  }
+  
+  */

@@ -1,0 +1,57 @@
+
+<ion-content class="main-view">
+
+    <div class="overlay" (click)="closeModal()"></div>
+    <div class="modal_content">
+      <h1><span id="logodetalles"></span> Expediente <ion-icon id="cerrarmodal" ios="md-close-circle" md="md-close-circle" (click)="closeModal()"></ion-icon></h1>
+  
+      <p class="detallecita"><span class="datocita"><ion-icon name="md-person"></ion-icon> Paciente:</span> {{data.nombre_completo_paciente}}</p>
+      <p class="detallecita"><span class="datocita"><ion-icon name="ios-calendar"></ion-icon> Edad:</span> {{data.edad_paciente}} años</p>
+      <p class="detallecita"><span class="datocita"><img id="sexicon" src="../../assets/img/sexo.svg"> Sexo:</span> {{data.Sexo}}</p>
+  
+      <p class="detallecita"><span class="datocita"><ion-icon name="clock"></ion-icon> Inicio consulta:</span><strong class="inicioconsulta">{{data.hora_inicio}}</strong></p>
+      <p class="detallecita"><span class="datocita"><ion-icon name="time"></ion-icon> Fin consulta:</span><strong class="finconsulta">{{data.hora_fin}}</strong></p>
+      <p class="detallecita"><span class="datocita"><ion-icon name="apps"></ion-icon> Tipo consulta:</span><strong>{{data.tipo_servicio}}</strong></p>
+      <p class="detallecita" id="padecimiento"><span class="datocita"><ion-icon name="md-document"></ion-icon> Padecimiento:</span>{{data.padecimiento}}</p>
+      <p class="detallecita"  id="detallescita"><span class="datocita"><ion-icon name="list"></ion-icon> Detalles:</span>{{data.detalles_cita}}</p>  
+  
+
+
+<!--
+      <ion-fab botton> 
+          <ion-row>
+            <ion-col>              
+                    <ion-fab-button [ngClass]="!statusBtnExp ? 'btnExpNoPresionado' : 'btnExpPresionado' " (click)="editarCampos()" [hidden]="!statusBtnExp ? false : true">
+                          <ion-icon name="md-create" large></ion-icon>
+                      </ion-fab-button>
+            </ion-col>
+      
+            <ion-col>
+                    <ion-fab-button [ngClass]="statusBtnExp ? 'btnExpPresionado' : 'btnExpNoPresionado' " id="expediente" (click)="aceptarCambiosExpediente()" [hidden]="statusBtnExp ? false : true">         
+                          <ion-icon name="md-checkmark" large></ion-icon>
+                      </ion-fab-button>       
+            </ion-col>
+              
+            <ion-col>
+                    <ion-fab-button [ngClass]="statusBtnExp ? 'btnExpPresionado' : 'btnExpNoPresionado' " id="expediente" (click)="cancelarCambiosExpedeinte()" [hidden]="statusBtnExp ? false : true">
+                          <ion-icon name="md-close" large></ion-icon>
+                      </ion-fab-button>     
+            </ion-col>                    
+
+            </ion-row>
+        </ion-fab>
+-->      
+
+
+   
+
+    
+
+
+
+
+
+    
+    </div>
+    
+  </ion-content>

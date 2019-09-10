@@ -4,20 +4,19 @@ import { AlertController,NavParams,ModalController,LoadingController,Platform,Na
 
 import { NavigationExtras } from '@angular/router';
 
-//import { DatePicker } from '@onic-native/date-picker/ngx';
-
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.page.html',
-  styleUrls: ['./modal.page.scss'],
+  selector: 'app-modal-expediente',
+  templateUrl: './modal-expediente.page.html',
+  styleUrls: ['./modal-expediente.page.scss'],
 })
-export class ModalPage implements OnInit {
+export class ModalExpedientePage implements OnInit {
 
-  
+    
   @Input() value: any;
 
   statusEliminarCita:boolean = false;
   statusmostrarBotonVideoAsistenia:boolean=false;
+  statusBtnExp:boolean=false;
   data:any = {};
   fecha_consulta: String;
   hora_inicio:String;
@@ -62,12 +61,12 @@ export class ModalPage implements OnInit {
     //alert(JSON.stringify(data))
     console.log("En el modal: "+JSON.stringify(data))
 
-    //alert("En el modal: "+JSON.stringify(data))
+    //alert("En el modal-expediente: "+JSON.stringify(data))
     //console.log("En el modal: "+JSON.stringify(data))
     this.data.fecha_consulta = data.fecha_consulta;
-    this.data.hora_inicio = data.hora;
-    this.data.hora_fin  = data.horb;
-    this.data.detalles_cita = data.descripcion;
+    this.data.hora_inicio = data.hora_inicio;
+    this.data.hora_fin  = data.hora_fin;
+    this.data.detalles_cita = data.detalles_cita;
     this.data.tipo_servicio = data.tipo_servicio;
     this.data.link_token_original = data.link_token;  
     this.data.booking_id=data.booking_id;
@@ -76,24 +75,6 @@ export class ModalPage implements OnInit {
     this.data.padecimiento=data.padecimiento;
     this.data.nombre_completo_paciente=data.nombre_completo_paciente;
 
-//Almacenamos los datos en variables locales para mostrarlos en el modal del expediente
-/*
-localStorage.setItem("fecha_consulta",this.data.fecha_consulta);
-localStorage.setItem("hora_inicio",this.data.hora_inicio);
-localStorage.setItem("hora_fin",this.data.hora_fin);
-localStorage.setItem("detalles_cita",this.data.detalles_cita);
-localStorage.setItem("tipo_servicio",this.data.tipo_servicio);
-localStorage.setItem("link_token",this.data.link_token_original);
-localStorage.setItem("booking_id",this.data.booking_id);
-localStorage.setItem("edad_paciente",this.data.edad_paciente);
-localStorage.setItem("Sexo",this.data.Sexo);
-localStorage.setItem("padecimiento",this.data.padecimiento);
-localStorage.setItem("nombre_completo_paciente",this.data.nombre_completo_paciente);
-*/
-
-
-
-    this.checkRango = this.verificarRangoDeFechasPorCita(this.data.fecha_consulta,this.data.hora_inicio,this.data.hora_fin)
     //alert(this.checkRango)
 
     this.statusmostrarBotonVideoAsistenia = (this.checkRango && (this.data.tipo_servicio == "video_consulta"))
@@ -199,148 +180,6 @@ localStorage.setItem("nombre_completo_paciente",this.data.nombre_completo_pacien
     await alert.present();
   }
 
-  verificarRangoDeFechasPorCita(fecha,startHour,endHour){
-
-
-    var startTime;
-    var endTime;
-    
-     //Formato de la base de datos de Saul
-    startTime = fecha+" "+startHour;
-    endTime = fecha+" "+endHour; 
-    
-    var fechaHoy = new Date();
-    //Para android
-    let inicio = new Date(startTime);
-    let fin = new Date(endTime);
-    
-    //Para iOS tenemos que modificar el formato de fecha
-    var startTimeMOD = startTime;
-    var stm = new Date(startTimeMOD.replace(/-/g, '/'));
-
-    var endTimeMOD = endTime;
-    var stmf = new Date(endTimeMOD.replace(/-/g, '/'));
-
-    if (this.plt.is('ios')) {
-  
-      if (fechaHoy >= stm && fechaHoy <= stmf) {
-        console.log("Esta dentro del rango");
-        return true;
-      } 
-      else {
-        console.log("La videoasistencia no puede realizarse");
-        return false;
-      }
-
-    }else if (this.plt.is('android')) {
-  
-      if (fechaHoy >= inicio && fechaHoy <= fin) {
-        console.log("Esta dentro del rango");
-        return true;
-      } 
-      else {
-        console.log("La videoasistencia no puede realizarse");
-        return false;
-      }
-    }
-  }
-
-  iniciarVideoconferencia(){    
-    //alert(this.data.link_token )
-    //this.iab.create(this.data.link_token,'_system');    
-    //alert("Entrando a la funcion para redirigir a la videoconferencia")
-
-  /*
-    setTimeout(() => {
-      this.modalCtrl.dismiss()
-    }, 500);
-  */
-
-    this.modalCtrl.dismiss()
-/*
-let objeto ={
-  user: window.localStorage.getItem("nombre_doctor"),
-  session: this.data.link_token_original,
-
-fecha_consulta:this.data.fecha_consulta,
-hora_inicio: this.data.hora_inicio,
-hora_fin:this.data.hora_fin,
-detalles_cita:this.data.detalles_cita,
-tipo_servicio:this.data.tipo_servicio,
-link_token_original:this.data.link_token_original,
-booking_id:this.data.booking_id,
-edad_paciente:this.data.edad_paciente,
-Sexo:this.data.Sexo,
-padecimiento:this.data.padecimiento,
-nombre_completo_paciente:this.data.nombre_completo_paciente
-}
-
-alert("Datos a enviar a Demo para videoconferencia: \n"+JSON.stringify(objeto))
-*/
-
-
-    let navigationExtras: NavigationExtras = {
-      queryParams: {
-          user: window.localStorage.getItem("nombre_doctor"),
-          session: this.data.link_token_original,
-
-    fecha_consulta:this.data.fecha_consulta,
-    hora_inicio: this.data.hora_inicio,
-    hora_fin:this.data.hora_fin,
-    detalles_cita:this.data.detalles_cita,
-    tipo_servicio:this.data.tipo_servicio,
-    link_token_original:this.data.link_token_original,
-    booking_id:this.data.booking_id,
-    edad_paciente:this.data.edad_paciente,
-    Sexo:this.data.Sexo,
-    padecimiento:this.data.padecimiento,
-    nombre_completo_paciente:this.data.nombre_completo_paciente
-
-
-
-
-      }
-  };
-  //this.navCtrl.navigateForward(['/VideoAsistencia'], navigationExtras);
-
-  if (this.plt.is('ios')) {
-  
-    this.navCtrl.navigateForward(['/Demo'], navigationExtras);
-
-  }else if (this.plt.is('android')) {
-
-//    this.navCtrl.navigateForward(['/VideoAsistencia'], navigationExtras);
-    this.navCtrl.navigateForward(['/Demo'], navigationExtras);
-
-  }
-
-
-    
-  }
-
-  eliminarCita(){
-    //alert("Entrando a eliminar la cita")
-    this.eliminarCitaAler()
-
-  }
-/*
-  reasignarCita(){
-    //this.navCtrl.push(ModificarCitaPage); 
-
-    this.datePicker.show({
-      date: new Date(),
-      mode: 'datetime',
-      androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_LIGHT
-    }).then(date => {
-      alert("Su cita ha sido reasignada")
-      this.retrocederPagina()
-    },
-      err => {
-        alert('Ha ocurrido un error al tratar de reasignar su cita '+ err)
-      }
-    );
-}
-*/
 
 retrocederPagina(){
   this.navCtrl.pop();
@@ -351,5 +190,18 @@ async closeModal(){
     "eliminado":this.statusEliminarCita
   })
 }
+
+editarCampos(){
+  this.statusBtnExp=true;
+}
+
+aceptarCambiosExpediente(){
+  this.statusBtnExp=false;
+}
+
+cancelarCambiosExpedeinte(){
+  this.statusBtnExp=false;
+}
+
 
 }

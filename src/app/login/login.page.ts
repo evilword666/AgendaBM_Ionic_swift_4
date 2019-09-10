@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
   
+  statusBtnExp:boolean=false;
+  
   data:any = {};
 
   user:String;
@@ -194,5 +196,18 @@ ngOnInit(): void {
   routingIonic4(){
     this.navCtrl.navigateForward('/videoasistencia')    
   }
+
+  editarCampos(){
+    this.statusBtnExp=true;
+  }
+  
+  aceptarCambiosExpediente(){
+    this.statusBtnExp=false;
+  }
+  
+  cancelarCambiosExpedeinte(){
+    this.statusBtnExp=false;
+  }
+
 
 }

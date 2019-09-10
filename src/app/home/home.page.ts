@@ -11,6 +11,7 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { ModalExpedientePage } from '../modal-expediente/modal-expediente.page';
 
 /*
 import { registerLocaleData } from '@angular/common';
@@ -345,7 +346,7 @@ async verDetallesCita()
   //const evento = {nombre:"Xavi",edad:"27"}
 
   const myModal = await this.modalCtrl.create({
-   component: ModalPage,
+   component: ModalExpedientePage,
    componentProps: { datos: evento }
  });
  // Get returned data
@@ -502,8 +503,8 @@ public playAudio(){
     console.log("Estado notificacion recibida: "+localStorage.getItem("NotificacionRecibida"))
 
 //    var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';    
-  //var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';
-  var link = 'http://exp.botonmedico.com/wp_DB/service/recibirDatos.php';
+  var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';
+  //var link = 'http://exp.botonmedico.com/wp_DB/service/recibirDatos.php';
 
 
     var id_medico = JSON.stringify({id_medico: window.localStorage.getItem("id_doctor")});          
@@ -547,8 +548,8 @@ public playAudio(){
 insertIdMedicoToken(){    
   
 //  var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';
-//  var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';
-var link = 'http://exp.botonmedico.com/wp_DB/service/recibirDatos.php';
+  var link = 'https://vid.botonmedico.com/wp_DB/service/recibirDatos.php';
+//var link = 'http://exp.botonmedico.com/wp_DB/service/recibirDatos.php';
   
   var id_token = JSON.stringify({id_medico: window.localStorage.getItem("id_doctor"), tokenPhoneMedico:localStorage.getItem("phoneToken"),UUID_Phone:localStorage.getItem("UUID_Phone")});        
         try {

@@ -49,6 +49,12 @@
     <div id="session-header">
     </div>
 
+    <ion-fab class="ml10" left top #fab >
+        <ion-fab-button id="expediente" left bottom (click)="verDetallesCita()" [hidden]="usuarioRemotoConectado=='true'?false:false"><!-- Cambiar el ultimo a true -->          
+              <ion-icon name="md-clipboard" large></ion-icon>
+           </ion-fab-button>
+    </ion-fab>
+
 
         <div class="videoremotocont" *ngFor="let sub of subscribers">
           <div class="stream-container">

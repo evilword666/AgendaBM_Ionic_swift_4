@@ -8,8 +8,14 @@ import { Platform, AlertController } from '@ionic/angular';
 import { OpenVidu, Publisher, Session, StreamEvent, StreamManager, Subscriber } from 'openvidu-browser';
 import { throwError as observableThrowError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { NavController, NavParams } from '@ionic/angular';
+import { NavController, NavParams,ModalController } from '@ionic/angular';
 import { ActivatedRoute } from "@angular/router";
+import { ModalPage } from '../modal/modal.page';
+import { ModalExpedientePage } from '../modal-expediente/modal-expediente.page';
+
+
+
+
 declare var cordova;
 
 
@@ -60,6 +66,19 @@ mySessionId: string;
 myUserName: string;
 
 
+fecha_consulta:string;
+hora_inicio:string;
+hora_fin:string;
+detalles_cita:string;
+tipo_servicio:string;
+link_token_original:string;
+booking_id:string;;
+edad_paciente:string;
+Sexo:string;
+padecimiento:string;
+nombre_completo_paciente:string;
+
+
 
 constructor(
     private route: ActivatedRoute,
@@ -69,7 +88,8 @@ constructor(
     private statusBar: StatusBar,
     private httpClient: HttpClient,
     private androidPermissions: AndroidPermissions,
-    public alertController: AlertController
+    public alertController: AlertController,
+    private modalCtrl:ModalController
 ) {
 
     this.initializeApp();
@@ -283,6 +303,19 @@ private generateParticipantInfo() {
         this.mySessionId = params["session"];
         this.myUserName = params["user"];            
 
+
+        
+        this.fecha_consulta = params["fecha_consulta"];
+        this.hora_inicio =  params["hora_inicio"];
+        this.hora_fin = params["hora_fin"];
+        this.detalles_cita = params["detalles_cita"];
+        this.tipo_servicio = params["tipo_servicio"];
+        this.link_token_original = params["link_token_original"];
+        this.booking_id = params["booking_id"];
+        this.edad_paciente = params["edad_paciente"];
+        this.Sexo = params["Sexo"];
+        this.padecimiento = params["padecimiento"];
+        this.nombre_completo_paciente = params["nombre_completo_paciente"];
         //this.mySessionId = 'SessionA';
         //this.myUserName = 'Participant' + Math.floor(Math.random() * 100);
 
@@ -432,5 +465,42 @@ createToken(sessionId): Promise<string> {
 regresar(){
     this.navCtrl.navigateForward('/login')
   }
+
+  async verDetallesCita()
+{
+
+  let evento = {
+    "fecha_consulta": this.fecha_consulta, 
+    "hora_inicio": this.hora_inicio, 
+    "hora_fin": this.hora_fin, 
+    "detalles_cita": this.detalles_cita, 
+    "link_token_original": this.link_token_original, 
+    "tipo_servicio": this.tipo_servicio,
+    "booking_id":this.booking_id,
+    "edad_paciente":this.edad_paciente,
+    "Sexo":this.Sexo,
+    "padecimiento":this.padecimiento,
+    "nombre_completo_paciente":this.nombre_completo_paciente
+  };
+
+  //alert("Antes de mandar de Videoasistencia al Modal del expediente: "+JSON.stringify(evento))
+  //const evento = {nombre:"Xavi",edad:"27"}
+
+  const myModal = await this.modalCtrl.create({
+   component: ModalExpedientePage,
+   componentProps: { datos: evento }
+ });
+ // Get returned data
+//const { data } = await modal.onWillDismiss();
+//alert("Datos regresados: "+JSON.stringify(data))
+
+  //myModal.onWillDismiss()
+  
+
+
+ return await myModal.present();
+
+ 
+}
 
 }
