@@ -303,6 +303,9 @@ private generateParticipantInfo() {
         this.mySessionId = params["session"];
         this.myUserName = params["user"];            
 
+        localStorage.setItem("mySessionId",this.mySessionId)
+        localStorage.setItem("myUserName",this.myUserName)
+        
 
         
         this.fecha_consulta = params["fecha_consulta"];
@@ -316,6 +319,24 @@ private generateParticipantInfo() {
         this.Sexo = params["Sexo"];
         this.padecimiento = params["padecimiento"];
         this.nombre_completo_paciente = params["nombre_completo_paciente"];
+
+
+
+        localStorage.setItem("fecha_consulta",this.fecha_consulta)
+        localStorage.setItem("hora_inicio",this.hora_inicio)        
+        localStorage.setItem("hora_fin",this.hora_fin)
+        localStorage.setItem("detalles_cita",this.detalles_cita)        
+        localStorage.setItem("tipo_servicio",this.tipo_servicio)
+        localStorage.setItem("link_token_original",this.link_token_original)
+        localStorage.setItem("booking_id",this.booking_id)
+        localStorage.setItem("edad_paciente",this.edad_paciente)
+        localStorage.setItem("Sexo",this.Sexo)
+        localStorage.setItem("padecimiento",this.padecimiento)
+        localStorage.setItem("nombre_completo_paciente",this.nombre_completo_paciente)
+
+
+
+
         //this.mySessionId = 'SessionA';
         //this.myUserName = 'Participant' + Math.floor(Math.random() * 100);
 

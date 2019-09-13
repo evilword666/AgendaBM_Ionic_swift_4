@@ -3,7 +3,8 @@
 
   <ion-header mode="ios">
     <ion-toolbar color="primary">
-      <img class="demo-logo" src="../assets/images/openvidu_vert_white_bg_trans_cropped.png" />
+      <!--<img class="demo-logo" src="../assets/images/openvidu_vert_white_bg_trans_cropped.png" />-->
+      <img class="demo-logo" src="../assets/img/logo_bm_large_reduce.png" />
     </ion-toolbar>
   </ion-header>
 
@@ -50,7 +51,7 @@
     </div>
 
     <ion-fab class="ml10" left top #fab >
-        <ion-fab-button id="expediente" left bottom (click)="verDetallesCita()" [hidden]="usuarioRemotoConectado=='true'?false:false"><!-- Cambiar el ultimo a true -->          
+        <ion-fab-button id="expediente" left bottom (click)="verDetallesCita()" [hidden]="usuarioRemotoConectado=='true'?false:true"><!-- Cambiar el ultimo a true -->          
               <ion-icon name="md-clipboard" large></ion-icon>
            </ion-fab-button>
     </ion-fab>
@@ -68,11 +69,22 @@
         </div>
 
 
+<!--
+        <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+          <ion-fab-button size="small" color="primary" (click)="initializeApp()">
+            <ion-icon name="md-refresh"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>        
+-->
+
+
     <ion-fab vertical="bottom" horizontal="center" slot="fixed">
       <ion-fab-button size="small" color="secondary" (click)="leaveSession()">
         <ion-icon name="power"></ion-icon>
       </ion-fab-button>
     </ion-fab>
+
+
     <h1 id='textoAmostrar' color="primary" [hidden]="usuarioRemotoConectado=='false'?false:true" >{{textoAmostrar}}</h1>
     
   </ion-content>

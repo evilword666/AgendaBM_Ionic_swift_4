@@ -99,14 +99,45 @@
     step="30"
     startingDayWeek="1">
   </calendar>
- 
+
+<!--
+  <ion-fab class="ml10" left top #fab >
+    <ion-fab-button id="actualizar" left top (click)="reanudarVideoasistencia()">          
+          <ion-icon name="ios-videocam" large></ion-icon>          
+       </ion-fab-button>
+    </ion-fab>  
+
+
+
+
+
+    <ion-fab bottom left>
+      <ion-row>
+        <ion-col>
+          <ion-fab-button id="actualizar" left botton (click)="reanudarVideoasistencia()">          
+            <ion-icon name="ios-videocam" large></ion-icon>          
+         </ion-fab-button>
+        </ion-col>
+      </ion-row>
+</ion-fab>
+
+-->    
+
+
+<!--<ion-fab class="ml11" left botton #fab [hidden]="reanudarVideo ? false : true" >-->
+<ion-fab class="ml11" left botton #fab >
+  <ion-fab-button color="secondary" id="reanudarVideoasistencia" left top (click)="reanudarVideoasistencia()">          
+        <ion-icon name="ios-videocam" large></ion-icon>          
+     </ion-fab-button>
+  </ion-fab>  
+
   <ion-fab class="ml10" right bottom #fab >
-  <ion-fab-button id="actualizar" right bottom (click)="actualizarAgenda()">
-  <!--<ion-fab-button right bottom (click)="verDetallesCita()">-->
-        
+  <ion-fab-button id="actualizar" right bottom (click)="actualizarAgenda()">       
         <ion-icon name="md-refresh" large></ion-icon>
-        <!-- <ion-img src="img/update2.png"></ion-img> -->
      </ion-fab-button>
   </ion-fab>
-  
+
+
+
+
 </ion-content>

@@ -203,5 +203,27 @@ cancelarCambiosExpedeinte(){
   this.statusBtnExp=false;
 }
 
+verConsulta(){
+  localStorage.setItem("linkAbierto","1")
+  window.open('https://vid.botonmedico.com/expediente/#/pacientes/subSecuente', '_system', 'location=yes');
+
+}
+
+verEndoscopio(){
+
+}
+
+verEstetoscopio(){
+
+}
+
+verECG(){
+  localStorage.setItem("linkAbierto","1")
+  window.open('https://vid.botonmedico.com/expediente/#/monitoreo_ecg', '_system', 'location=yes');  
+}
+
+verTeleLab(){  
+}
+
 
 }

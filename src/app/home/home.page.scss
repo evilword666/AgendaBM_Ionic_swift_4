@@ -1,4 +1,5 @@
 .ml10{position:absolute; right:10px;}
+.ml11{position:absolute; left:10px;}
 ion-header ion-title{display: block; margin: 0 auto; position: absolute; line-height: 48px; top: 5px; left: 0; width: 100%; text-align: center;}
 .monthview-selected[_ngcontent-c1], .monthview-primary-with-event[_ngcontent-c1]{background: none!important; position: relative;}
 .monthview-primary-with-event[_ngcontent-c1]:before{content:"";background:#096A9C; width:36px; height:36px; border-radius:50%; display: block; position: absolute; top: 0; left: 0; z-index: -1; left:50%; margin-left: -18px}
@@ -11,5 +12,5 @@ th{background:#7ECFD3; color: #fff;}
 ion-label.label{margin: 5px 0!important;}
 ion-list.event-detail-container{margin-top:10px; max-height: 41.5vh; overflow-y:scroll;}
 #actualizar{position: fixed; right: 5px; bottom: 5px;}
-
+#reanudarVideoasistencia{position: fixed; left: 5px; bottom: 5px;}
 

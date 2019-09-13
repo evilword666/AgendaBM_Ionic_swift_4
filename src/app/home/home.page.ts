@@ -3,6 +3,7 @@ import { Component, ViewChild, OnInit, Inject, LOCALE_ID, Input } from '@angular
 import { AlertController,NavParams,ModalController,LoadingController,Platform,NavController} from '@ionic/angular';
 import { formatDate } from '@angular/common';
 import { ModalPage } from '../modal/modal.page';
+import { NavigationExtras } from '@angular/router';
 
 import {DatabaseService } from '../providers/database/database.service';
 
@@ -41,7 +42,9 @@ export class HomePage implements OnInit {
   bodyNotification:string = "Corriendo en segundo plano";
   isIosDevice:boolean=false;
   fechaActual:any;
-    
+  isAllowed:any="";
+  wasOpened:any="";
+  reanudarVideo:boolean=false;
  
   event = {
     title: '',
@@ -112,11 +115,29 @@ export class HomePage implements OnInit {
 
   localStorage.setItem("alertDatosConsultadosLanzada","0")
     
+//Aqui vamos a hacer una validacion para saber cuando mostrar el boton para reanudar la videoconferencia de cuanso se cierra al abrir desde el modal del expediente
+this.isAllowed = localStorage.getItem("statusmostrarBotonVideoAsistenia") //boolean
+this.wasOpened = localStorage.getItem("linkAbierto")
+
 
 
   }//Fin del constructor
  
+  verificarEstadoReanudarVideo(){
+    if(this.isAllowed == "true" && this.wasOpened == "1"){
+      this.reanudarVideo=true;
+    }else{
+      this.reanudarVideo=false;
+    }
+    
+    alert(this.reanudarVideo)
+
+  }
+
+
   ngOnInit() {
+    
+
     //this.closeModal()
     this.resetEvent();
 
@@ -126,6 +147,9 @@ export class HomePage implements OnInit {
 
     if (this.plt.is('android')) {
       setInterval(() => {
+
+        //this.verificarEstadoReanudarVideo()
+
         if(this.backgroundMode.isActive()==false){
             console.log("checarCambiosNotificacionesRecibidas() En el foreground")
             this.checarCambiosNotificacionesRecibidas()
@@ -915,7 +939,33 @@ loadEvents() {
 /********************************************************************************************************/
 /********************************************************************************************************/
 /********************************************************************************************************/
+reanudarVideoasistencia(){
+  let navigationExtras: NavigationExtras = {
+    queryParams: {
+        user: localStorage.getItem("myUserName"),
+        session: localStorage.getItem("mySessionId"),
 
+
+
+        fecha_consulta:localStorage.getItem("fecha_consulta"),
+        hora_inicio: localStorage.getItem("hora_inicio"),
+        hora_fin:localStorage.getItem("hora_fin"),
+        detalles_cita:localStorage.getItem("detalles_cita"),
+        tipo_servicio:localStorage.getItem("tipo_servicio"),
+        link_token_original:localStorage.getItem("link_token_original"),
+        booking_id:localStorage.getItem("booking_id"),
+        edad_paciente:localStorage.getItem("edad_paciente"),
+        Sexo:localStorage.getItem("Sexo"),
+        padecimiento:localStorage.getItem("padecimiento"),
+        nombre_completo_paciente:localStorage.getItem("nombre_completo_paciente")
+      }
+    };
+
+    //alert("Parametros a enviar:\n "+this.myUserName+" Session: "+this.mySessionId)
+
+    this.navCtrl.navigateForward(['/VideoAsistencia'], navigationExtras);
+  
+}
 
 
 

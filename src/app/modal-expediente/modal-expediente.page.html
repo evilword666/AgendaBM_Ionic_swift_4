@@ -3,7 +3,7 @@
 
     <div class="overlay" (click)="closeModal()"></div>
     <div class="modal_content">
-      <h1><span id="logodetalles"></span> Expediente <ion-icon id="cerrarmodal" ios="md-close-circle" md="md-close-circle" (click)="closeModal()"></ion-icon></h1>
+      <h1><span id="logodetalles"></span> Detalles <ion-icon id="cerrarmodal" ios="md-close-circle" md="md-close-circle" (click)="closeModal()"></ion-icon></h1>
   
       <p class="detallecita"><span class="datocita"><ion-icon name="md-person"></ion-icon> Paciente:</span> {{data.nombre_completo_paciente}}</p>
       <p class="detallecita"><span class="datocita"><ion-icon name="ios-calendar"></ion-icon> Edad:</span> {{data.edad_paciente}} años</p>
@@ -46,6 +46,56 @@
    
 
     
+
+
+
+<ion-fab horizontal="end" vertical="bottom" slot="fixed" > 
+
+  <ion-fab-button vertical="bottom" horizontal="end">
+    <ion-icon name="md-medkit"></ion-icon>
+  </ion-fab-button>
+
+
+    <ion-fab-list side="top" id="modificarcita">
+
+    <ion-fab-button id="eliminarcita" (click)="verConsulta()">
+      <ion-icon name="md-person"></ion-icon>
+    </ion-fab-button>
+    <ion-label>Expediente</ion-label>
+
+    <ion-fab-button id="eliminarcita" (click)="verECG()">
+      <ion-icon name="md-barcode"></ion-icon>
+    </ion-fab-button>
+    <ion-label>ECG</ion-label>
+    
+    
+<!--
+    <ion-fab-button id="eliminarcita" (click)="verEndoscopio()">
+        <ion-icon name="md-camera"></ion-icon>
+      </ion-fab-button>
+      <ion-label>Cam. exploración</ion-label>
+
+      <ion-fab-button id="eliminarcita" (click)="verEstetoscopio()">
+          <ion-icon name="md-volume-mute"></ion-icon>
+        </ion-fab-button>
+        <ion-label>Estetoscopio</ion-label>
+        
+        <ion-fab-button id="eliminarcita" (click)="verECG()">
+            <ion-icon name="md-barcode"></ion-icon>
+          </ion-fab-button>
+          <ion-label>ECG</ion-label>
+
+          <ion-fab-button id="eliminarcita" (click)="verTeleLab()">
+              <ion-icon name="md-apps"></ion-icon>
+            </ion-fab-button>
+            <ion-label>TeleLab</ion-label>            
+-->
+
+  </ion-fab-list>
+</ion-fab>
+
+
+
 
 
 

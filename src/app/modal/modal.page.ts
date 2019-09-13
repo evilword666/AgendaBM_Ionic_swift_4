@@ -98,6 +98,7 @@ localStorage.setItem("nombre_completo_paciente",this.data.nombre_completo_pacien
 
     this.statusmostrarBotonVideoAsistenia = (this.checkRango && (this.data.tipo_servicio == "video_consulta"))
     //alert("ResComp: "+this.statusmostrarBotonVideoAsistenia)
+    localStorage.setItem("statusmostrarBotonVideoAsistenia",this.statusmostrarBotonVideoAsistenia+"")
   }
 
   async eliminarCitaAler() {
