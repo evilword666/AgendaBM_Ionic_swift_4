@@ -35,9 +35,15 @@ export class LoginPage implements OnInit {
 ngOnInit(): void {
   //this.user = "promedic.romero@gmail.com";
   //this.pass = "b44ESjktTOhNba@6&Y";  
+  
+//  this.user = "draLucy";
+//  this.pass = "ijPEKtTYV!hY";  
+  if(window.localStorage.getItem("user") !== undefined){
 
-  this.user = "draLucy";
-  this.pass = "ijPEKtTYV!hY";  
+    this.user = window.localStorage.getItem("user");
+    this.pass = window.localStorage.getItem("pass"); 
+
+  }
 
 }
 
