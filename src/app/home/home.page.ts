@@ -524,6 +524,8 @@ public playAudio(){
 
   //Desde aqui da errores
   consultarHorariosBDremota2(){
+    
+
     console.log("Estado notificacion recibida: "+localStorage.getItem("NotificacionRecibida"))
 
 //    var link = 'https://topmedic.com.mx/accessDatabase/wp_DB/service/recibirDatos.php';    

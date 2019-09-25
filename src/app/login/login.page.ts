@@ -33,6 +33,11 @@ export class LoginPage implements OnInit {
   }
   
 ngOnInit(): void {
+
+  //Aqui vamos a hacer una validacion para saber cuando mostrar el boton para reanudar la videoconferencia de cuanso se cierra al abrir desde el modal del expediente
+localStorage.setItem("statusmostrarBotonVideoAsistenia","false") //boolean
+localStorage.setItem("linkAbierto","0")
+
   //this.user = "promedic.romero@gmail.com";
   //this.pass = "b44ESjktTOhNba@6&Y";  
   
