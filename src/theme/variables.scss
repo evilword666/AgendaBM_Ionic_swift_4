@@ -5,7 +5,7 @@
 :root {
 
   /** primary **/
-  --ion-color-primary: #096A9C;
+  --ion-color-primary: #3cbfc4;
   --ion-color-primary-rgb: 9,106,56;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255,255,255;
@@ -13,7 +13,7 @@
   --ion-color-primary-tint: rgb(13, 144, 209);
 
   /** secondary **/
-  --ion-color-secondary: #A81A47;
+  --ion-color-secondary: #2c5173;
   --ion-color-secondary-rgb: 168,26,71;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255,255,255;
@@ -80,18 +80,18 @@
   .monthview-container{height:auto!important}
   .monthview-current, .monthview-selected, .monthview-primary-with-event{background-color: rgba(255,255,255,0)!important; position:relative}
   .monthview-current:before{content:""; width:36px; height:36px; border-radius:50%; position: absolute; top:0px; left:50%; margin-left: -18px; background: rgb(185, 185, 185); display:block; z-index: -1;}
-  .monthview-selected:before{content:""; width:36px; height:36px; border-radius:50%; position: absolute; top:0px; left:50%; margin-left: -18px; background: #A81A47; display:block; z-index: -1;}
-  .monthview-primary-with-event:before{content:""; width:36px; height:36px; border-radius:50%; position: absolute; top:0px; left:50%; margin-left: -18px; background: #096A9C; display:block; z-index: -1;}
+  .monthview-selected:before{content:""; width:36px; height:36px; border-radius:50%; position: absolute; top:0px; left:50%; margin-left: -18px; background: #2c5173; display:block; z-index: -1;}
+  .monthview-primary-with-event:before{content:""; width:36px; height:36px; border-radius:50%; position: absolute; top:0px; left:50%; margin-left: -18px; background: #3cbfc4; display:block; z-index: -1;}
 
   .ml10{position:absolute; right:10px;}
   ion-header ion-title{display:inline-block; vertical-align: text-top; }
   .monthview-selected, .monthview-primary-with-event{background: none!important; position: relative;}
-  .monthview-primary-with-event:before{content:"";background:#096A9C; width:36px; height:36px; border-radius:50%; display: block; position: absolute; top: 0; left: 0; z-index: -1; left:50%; margin-left: -18px}
-  .monthview-selected:before, .monthview-primary-with-event.monthview-selected:before{content:"";background:#A81A47; width:36px; height:36px; border-radius:50%; display: block; position: absolute; top: 0; left: 0; z-index: -1; left:50%; margin-left: -18px}
+  .monthview-primary-with-event:before{content:"";background:#3cbfc4; width:36px; height:36px; border-radius:50%; display: block; position: absolute; top: 0; left: 0; z-index: -1; left:50%; margin-left: -18px}
+  .monthview-selected:before, .monthview-primary-with-event.monthview-selected:before{content:"";background:#2c5173; width:36px; height:36px; border-radius:50%; display: block; position: absolute; top: 0; left: 0; z-index: -1; left:50%; margin-left: -18px}
   .monthview-primary-with-event, .weekview-with-event, .dayview-allday-label{background:#BFD9D5}    
-  .monthview-eventdetail-timecolumn{font-weight: 600; font-size:.95em; text-align: center; background:#096A9C!important; color: #fff!important; padding: 5px; vertical-align: middle; display:inline-block; min-width:120px; border-radius: 5px 0 0 5px;}
-  span.event-detail{padding:3px 5px; border:solid 1px #096A9C; border-radius: 0 5px 5px 0; display:inline-block; width: calc(100% - 110px); min-height:27px;}
-  ion-label.label{border:solid 2px #096A9C!important; border-radius: 5px; overflow:hidden;}
+  .monthview-eventdetail-timecolumn{font-weight: 600; font-size:.95em; text-align: center; background:#3cbfc4!important; color: #fff!important; padding: 5px; vertical-align: middle; display:inline-block; min-width:120px; border-radius: 5px 0 0 5px;}
+  span.event-detail{padding:3px 5px; border:solid 1px #3cbfc4; border-radius: 0 5px 5px 0; display:inline-block; width: calc(100% - 110px); min-height:27px;}
+  ion-label.label{border:solid 2px #3cbfc4!important; border-radius: 5px; overflow:hidden;}
   th{background:#7ECFD3; color: #fff;}
   .event-detail-container[_ngcontent-c0], .item-block:last-child, .item-wrapper:last-child .item-block, .item-inner, .list-ios > .item-block:first-child{border:none!important;}
   ion-label.label{margin: 5px 0!important;}

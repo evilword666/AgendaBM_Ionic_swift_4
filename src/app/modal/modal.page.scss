@@ -1,8 +1,9 @@
-
+.encabezado{background: #3cbfc4 url(../../assets/img/header-app-01.jpg) center no-repeat; background-size: cover;}
+.encabezado.ios .toolbar-background{display:none!important; opacity:0!important; visibility: hidden!important;}
 
     #logodetalles{
         display: inline-block;
-        background:url(../../assets/img/logo-header.png) no-repeat;
+        background:url(../../assets/img/doctor_logo.png) no-repeat;
         width: 30px;
         height: 30px;
         background-size: auto 30px;
@@ -63,7 +64,7 @@
             padding:0;
             margin-top: 0;
             font-weight: 300;
-            background: #096A9C;
+            background: #3cbfc4;
             color: #fff;
             padding:10px 0;
             box-sizing: border-box;
@@ -104,12 +105,12 @@
       margin:5px 0 5px 0;
       line-height: 2em;
       margin-left: 3px;
-      border: solid 2px #096A9C;
+      border: solid 2px #3cbfc4;
       border-radius: 5px;
       overflow: hidden;
     }
     span.datocita{
-      background:#096A9C;
+      background:#3cbfc4;
       color:#fff;
       padding: 0 5px;
       min-width:139px;
@@ -174,6 +175,6 @@
     }
 
 //#eliminarcita{right:13px; bottom:62px;}
-    .botoncalendario{position:absolute; bottom:0; right: 0; width:25px; height: 25px; color:·fff; background:#096A9C;}
+    .botoncalendario{position:absolute; bottom:0; right: 0; width:25px; height: 25px; color:·fff; background:#3cbfc4;}
 
 

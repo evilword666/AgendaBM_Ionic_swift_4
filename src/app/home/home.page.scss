@@ -13,4 +13,5 @@ ion-label.label{margin: 5px 0!important;}
 ion-list.event-detail-container{margin-top:10px; max-height: 41.5vh; overflow-y:scroll;}
 #actualizar{position: fixed; right: 5px; bottom: 5px;}
 #reanudarVideoasistencia{position: fixed; left: 5px; bottom: 5px;}
-
+.encabezado{background: #3cbfc4 url(../../assets/img/header-app-01.jpg) center no-repeat; background-size: cover;}
+.encabezado.ios .toolbar-background{display:none!important; opacity:0!important; visibility: hidden!important;}

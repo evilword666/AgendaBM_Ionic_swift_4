@@ -49,36 +49,36 @@ button[ion-fab] {
     overflow: visible;
 }
 .list-ios > .item-block:first-child{border-top:none;}
-.toolbar-ios-primary .toolbar-background-ios, .toolbar-md-primary .toolbar-background-md{ background:#096A9C;}
+.toolbar-ios-primary .toolbar-background-ios, .toolbar-md-primary .toolbar-background-md{ background:#3cbfc4;}
 .ios ion-toolbar{padding-top: 18px;}
 .centrado{text-align:center}
 .headerlogo{width:100%; max-width:245px; }
 ion-content{margin-top:2em;}
-.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .list-ios .item-block .item-inner{border-bottom:solid 2px #096A9C; box-shadow:none;}
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .list-ios .item-block .item-inner{border-bottom:solid 2px #3cbfc4; box-shadow:none;}
 
 .button-outline-ios, .button-outline-md {
     border-radius: 4px;
     border-width: 1px;
     border-style: solid;
-    border-color: #096A9C;
+    border-color: #3cbfc4;
     color: #fff;
-    background-color: #096A9C;
+    background-color: #3cbfc4;
     text-transform: uppercase;
 }
 [icon-left] ion-icon{margin-left:10px}
 ion-footer ion-toolbar{padding: 5px 20px!important; box-sizing: border-box; color: #fff; vertical-align: middle; text-align: right; font-size: 10px;}
 ion-footer ion-toolbar span, ion-footer ion-toolbar .toolbar-content-ios span{vertical-align: super;}
 ion-footer ion-toolbar img{max-width: 75px;}
-.bgr{background:#A81A47; }
-.bga{background: #096A9C; padding:5px; border-radius: 5px 0 0 5px; min-width: 119px; box-sizing: border-box; margin-right: 0; text-align: right;}
+.bgr{background:#2c5173; }
+.bga{background: #3cbfc4; padding:5px; border-radius: 5px 0 0 5px; min-width: 119px; box-sizing: border-box; margin-right: 0; text-align: right;}
 
 #botonLogin{    
     --color:white;
     --background:white;
     --box-shadow:none;
-    border-top:solid 1px #096A9C;
-    border-bottom:solid 1px #096A9C;
-    border-right: solid 1px #096A9C;
+    border-top:solid 1px #3cbfc4;
+    border-bottom:solid 1px #3cbfc4;
+    border-right: solid 1px #3cbfc4;
     border-radius: 0 5px 5px 0;
     box-sizing: border-box;
     margin: 0;
@@ -94,9 +94,9 @@ ion-footer ion-toolbar img{max-width: 75px;}
     --background:white;
     --ion-color-shade: #fff;
 }
-ion-input#userlogin{border:solid 1px #096A9C; border-radius: 0 5px 5px 0; padding-top:5px!important; padding-bottom:4px!important;}
-ion-input#pwd{border-top:solid 1px #096A9C; border-bottom:solid 1px #096A9C; padding-top:5px!important; padding-bottom:4px!important;}
-.defaultClassDatLab{border-right: solid 1px #096A9C; border-radius:0 5px 5px 0;}
+ion-input#userlogin{border:solid 1px #3cbfc4; border-radius: 0 5px 5px 0; padding-top:5px!important; padding-bottom:4px!important;}
+ion-input#pwd{border-top:solid 1px #3cbfc4; border-bottom:solid 1px #3cbfc4; padding-top:5px!important; padding-bottom:4px!important;}
+.defaultClassDatLab{border-right: solid 1px #3cbfc4; border-radius:0 5px 5px 0;}
 .ClaseNuevaAsignada{border-right:none!important; border-radius: 0;}
 
 ion-fab{
@@ -105,7 +105,9 @@ ion-fab{
     flex-direction: row;
     justify-content: right;
   }
-
+.encabezado{background: #3cbfc4 url(../../assets/img/header-app-01.jpg) center no-repeat; background-size: cover;}
+.encabezado.ios .toolbar-background, .footer-ios .toolbar-background{display:none!important; opacity:0!important; visibility: hidden!important;}
+.footerbm{background: #3cbfc4 url(../../assets/img/footer-app-01.jpg) center no-repeat; background-size: cover;}
 /*
   .btnExpPresionado{
     visibility: hidden;    

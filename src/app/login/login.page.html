@@ -1,76 +1,72 @@
 
   <!--<ion-toolbar color="primary" class="centrado"><img src="../../assets/img/logo-header.png" class="headerlogo">-->
-  <ion-toolbar color="primary" class="centrado"><img src="../../assets/img/logo_bm_large_reduce.png" class="headerlogo">
+    <ion-toolbar class="centrado encabezado">
     
-  </ion-toolbar>
-
-
-
-<ion-content text-center id="fondoContenido">
-
-    
-  <img src="../../assets/img/doctor_logo.png" width="50%" class="margin" />
-  <ion-list lines="none">    
-      <ion-item class="nobb" lines="none">
-        <ion-label floating color="light" class="bga"><ion-icon name="person" ios="md-person"></ion-icon> Usuario</ion-label>
-        <ion-input id="userlogin" type="text" [(ngModel)]="user"></ion-input>
-      </ion-item>
-    
-      <ion-item lines="none">        
-        <ion-label floating color="light" class="bga"><ion-icon name="key" ios="md-key"></ion-icon> Contraseña</ion-label>
-        <ion-input id="pwd" [type]="passwordType" [(ngModel)]="pass" [ngClass]="!pass ? 'defaultClassDatLab' : 'ClaseNuevaAsignada' "></ion-input>
-        <!--<ion-icon name="eye" color="primary" item-end (click)="mostrarPassword()"></ion-icon>-->
-
-        
-        <ion-button id="botonLogin" color="light" item-end large  (click)="mostrarPassword()" [hidden]="!pass">
-          <ion-icon name="eye" [color]="passwordShowed === true ? 'primary' : 'danger'"></ion-icon>
-        </ion-button>
-        
-      </ion-item>        
+    </ion-toolbar>
+  
+  
+  
+  <ion-content text-center id="fondoContenido">
+  
       
-        <p></p>
-
-    </ion-list>
-    
-<!--
-    <button ion-button outline item-end icon-left color="gris" (click)="registrarse()">Registrarse <br>
-    <ion-icon name="md-create"></ion-icon>
-  </button>
--->
-
-<ion-button color="secondary"  (click)="login()" [disabled]="user !== '' && pass !== '' ? false : true">Ingresar <br>
-<!--<ion-button  (click)="routingIonic4()">Ingresar <br>-->  
-</ion-button>
-
-<!--
-    <button ion-button outline item-end icon-left  color="Primary" (click)="mostrarPassword()">Mostrar contraseña
-      <ion-icon name="eye"></ion-icon>
-  </button>
--->        
-<!--
-<ion-fab right bottom >
-  <button ion-fab >
-      <ion-icon name="md-calendar" large></ion-icon>
-   </button>
-   <ion-fab-list side="top"> 
-    <button class="option" ion-fab><ion-icon name="md-remove"></ion-icon><ion-label>Eliminar cita</ion-label></button>
-    <button class="option" ion-fab><ion-icon name="md-add"></ion-icon><ion-label>Agregar cita</ion-label></button>
-    <button class="option" ion-fab><ion-icon name="md-refresh"></ion-icon><ion-label>Actualizar cita</ion-label></button>
-  </ion-fab-list>
-</ion-fab>
--->
-
-
-
-
-
-
-</ion-content>
-
-<ion-footer>
-<!--XDXDXD-->
-<ion-toolbar id="daatlab" color="primary"><span></span>
-</ion-toolbar>
-
-</ion-footer>
-
+    <img src="../../assets/img/doctor_logo.png" width="50%" class="margin" />
+    <ion-list lines="none">    
+        <ion-item class="nobb" lines="none">
+          <ion-label floating color="light" class="bga"><ion-icon name="person" ios="md-person"></ion-icon> Usuario</ion-label>
+          <ion-input id="userlogin" type="text" [(ngModel)]="user"></ion-input>
+        </ion-item>
+      
+        <ion-item lines="none">        
+          <ion-label floating color="light" class="bga"><ion-icon name="key" ios="md-key"></ion-icon> Contraseña</ion-label>
+          <ion-input id="pwd" [type]="passwordType" [(ngModel)]="pass" [ngClass]="!pass ? 'defaultClassDatLab' : 'ClaseNuevaAsignada' "></ion-input>
+          <!--<ion-icon name="eye" color="primary" item-end (click)="mostrarPassword()"></ion-icon>-->
+  
+          
+          <ion-button id="botonLogin" color="light" item-end large  (click)="mostrarPassword()" [hidden]="!pass">
+            <ion-icon name="eye" [color]="passwordShowed === true ? 'primary' : 'danger'"></ion-icon>
+          </ion-button>
+          
+        </ion-item>        
+        
+          <p></p>
+  
+      </ion-list>
+      
+  <!--
+      <button ion-button outline item-end icon-left color="gris" (click)="registrarse()">Registrarse <br>
+      <ion-icon name="md-create"></ion-icon>
+    </button>
+  -->
+  
+  <ion-button color="secondary"  (click)="login()" [disabled]="user !== '' && pass !== '' ? false : true">Ingresar <br>
+  <!--<ion-button  (click)="routingIonic4()">Ingresar <br>-->  
+  </ion-button>
+  
+  <!--
+      <button ion-button outline item-end icon-left  color="Primary" (click)="mostrarPassword()">Mostrar contraseña
+        <ion-icon name="eye"></ion-icon>
+    </button>
+  -->        
+  <!--
+  <ion-fab right bottom >
+    <button ion-fab >
+        <ion-icon name="md-calendar" large></ion-icon>
+     </button>
+     <ion-fab-list side="top"> 
+      <button class="option" ion-fab><ion-icon name="md-remove"></ion-icon><ion-label>Eliminar cita</ion-label></button>
+      <button class="option" ion-fab><ion-icon name="md-add"></ion-icon><ion-label>Agregar cita</ion-label></button>
+      <button class="option" ion-fab><ion-icon name="md-refresh"></ion-icon><ion-label>Actualizar cita</ion-label></button>
+    </ion-fab-list>
+  </ion-fab>
+  -->
+  
+  
+  
+  </ion-content>
+  
+  <ion-footer>
+  <!--XDXDXD-->
+  <ion-toolbar id="daatlab" class="footerbm"><span></span>
+  </ion-toolbar>
+  
+  </ion-footer>

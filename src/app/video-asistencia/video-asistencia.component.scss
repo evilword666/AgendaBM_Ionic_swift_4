@@ -1,3 +1,5 @@
+.encabezado{background: #3cbfc4 url(../../assets/img/header-app-01.jpg) center no-repeat; background-size: cover;}
+.encabezado.ios .toolbar-background{display:none!important; opacity:0!important; visibility: hidden!important;}
 .demo-logo {
     height: 26px;
     padding-left: 5px;
@@ -29,7 +31,7 @@ ion-header ion-toolbar{height:100%;}
 
 .videoremoto{position:fixed; bottom:0; left:0; width: 100vw; height: calc(100vh - 56px);}
 
-.videolocal{position:fixed; bottom:10px; right: 10px; width:35%; height:20%;}
+.videolocal{position:fixed; bottom:10px; right: 10px; width:35%; height:20%; border-radius: 10px;}
 
 
 
@@ -40,5 +42,5 @@ ion-header ion-toolbar{height:100%;}
 
 #textoAmostrar{
     text-align: center;
-    color: #A81A47;
+    color: #3cbfc4;
 }
